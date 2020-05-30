@@ -1,0 +1,45 @@
+
+
+<%= render 'tmp/header',{ s: "" } %>
+<main class="tofx">
+    <div class="fxse">
+        <div class="sdwe">
+
+            <div class="topic">
+                <div class="main_flame">
+                    <div class="tnav">
+                        <nav>
+                            <ul>
+                                <li class="current"><a href="/work">記事</a></li>
+                                <li class="des"><a href="/book" >本</a></li>
+                                <li class="des"><a href="/image" >画像</a></li>
+                                <li class="des"><a href="/video" >動画</a></li>
+                                <li class="des"><a href="/story" >ストーリー</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                    <div class="tmai">
+                        <p><%= @articleCount %>記事 <a href="/ArticleIndexResult">index申請結果</a></p>
+                        <%= render 'tmp/workArticleList' %>
+
+                    </div>
+                </div>
+                <%= render 'tmp/userside' %>
+            </div>
+        </div>
+    </div>
+</main>
+<%= render 'tmp/footer' %>
+<script>
+$(window).on('scroll', function() {
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+          $('.jscroll').jscroll({
+            contentSelector: '.skill-list',
+            nextSelector: 'span.next:last a'
+          });
+    }
+});
+</script>

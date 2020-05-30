@@ -1,0 +1,185 @@
+/* line 2, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pacard {
+  display: flex;
+}
+/* line 4, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pacard .p-left {
+  width: 30%;
+  padding-right: 10px;
+}
+/* line 7, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pacard .p-left img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+/* line 13, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pacard .p-right {
+  width: calc(70% - 10px;);
+}
+/* line 15, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pacard .p-right p {
+  margin: 0;
+  line-height: 1.8em;
+}
+/* line 19, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pacard .p-right p.tcdw {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+/* line 23, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pacard .p-right p.fouw {
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+/* line 30, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.paid-con {
+  width: 100%;
+  border-radius: 10px;
+  text-decoration: none;
+}
+/* line 34, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.paid-con:hover {
+  text-decoration: underline;
+}
+
+/* line 42, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS p, .fr-element p {
+  line-height: 2em;
+  margin: 0 0 25px 0;
+}
+/* line 46, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS img, .fr-element img {
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+/* line 50, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS blockquote, .fr-element blockquote {
+  margin: 10px 0;
+  background: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.19);
+  padding: 15px;
+  border-radius: 5px;
+}
+/* line 56, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS .paid-ens, .fr-element .paid-ens {
+  width: 100%;
+  text-align: center;
+  font-size: 0.8em;
+  color: #aaa;
+}
+/* line 62, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS .box1, .fr-element .box1 {
+  position: relative;
+  margin: 10px 0 15px 0;
+  padding: 35px 10px 10px 10px;
+  border: dashed 1px #808080;
+  border-radius: 8px;
+}
+/* line 68, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS .box1 .box1-title, .fr-element .box1 .box1-title {
+  position: absolute;
+  display: inline-block;
+  top: -13px;
+  left: 10px;
+  padding: 0 9px;
+  background: #FFF;
+  font-weight: bold;
+}
+/* line 79, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS ul, .pMS ol, .fr-element ul, .fr-element ol {
+  margin: 20px 0 10px 30px;
+}
+/* line 82, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS .bold, .fr-element .bold {
+  font-weight: bold;
+}
+/* line 85, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS .quoteBox, .fr-element .quoteBox {
+  width: 100%;
+  font-size: 0.8em;
+  text-align: right;
+}
+/* line 90, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS h2, .fr-element h2 {
+  font-weight: 580;
+  padding: 5px 0px;
+  width: 100%;
+  margin: 10px 0;
+  font-weight: bold;
+  border-bottom: solid 3px #494949;
+}
+/* line 98, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS h3, .fr-element h3 {
+  position: relative;
+  font-weight: bold;
+  font-size: 1em;
+  color: #808080;
+  padding: 2px 30px;
+  margin: 5px 0 25px 0;
+}
+/* line 105, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS h3:before, .fr-element h3:before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: '';
+  background: #00aced;
+  width: 0.8em;
+  height: 0.8em;
+}
+/* line 117, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS .paid, .pMS .paid-end, .fr-element .paid, .fr-element .paid-end {
+  display: flex;
+  align-items: center;
+  padding: 20px 0 5px 0;
+  color: #00aced;
+}
+/* line 122, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS .paid:before, .pMS .paid:after, .pMS .paid-end:before, .pMS .paid-end:after, .fr-element .paid:before, .fr-element .paid:after, .fr-element .paid-end:before, .fr-element .paid-end:after {
+  border-top: 1px solid;
+  content: "";
+  flex-grow: 1;
+}
+/* line 127, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS .paid:before, .pMS .paid-end:before, .fr-element .paid:before, .fr-element .paid-end:before {
+  margin-right: 1rem;
+}
+/* line 130, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.pMS .paid:after, .pMS .paid-end:after, .fr-element .paid:after, .fr-element .paid-end:after {
+  margin-left: 1rem;
+}
+
+/* line 135, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.nextbtn {
+  display: block;
+  padding: 5px;
+  border: 1px solid #00acee;
+  color: #00acee;
+  border-radius: 5px;
+  text-align: center;
+  transition: all  0.5s ease;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+/* line 145, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.nextbtn:hover {
+  background: #00acee;
+  color: white;
+}
+/* line 149, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.nextbtn i {
+  display: inline-block;
+  padding-left: 5px;
+  font-size: 0.9em;
+  color: #00acee;
+}
+
+/* line 156, /Users/higuchitakumi/smapr/app/assets/stylesheets/prooflyMainStyle.scss */
+.sidtagbtn {
+  width: calc(100% - 24px);
+  margin: 10px 7px 0 7px;
+}

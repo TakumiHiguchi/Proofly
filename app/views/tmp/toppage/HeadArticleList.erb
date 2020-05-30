@@ -1,0 +1,22 @@
+<!--<ul class="fgss vsd" style="width:100%;overflow-x: auto;white-space: nowrap;margin-top:10px;">
+
+    <% @articles.each do |pas| %>
+        <li class="fgss" style="white-space:normal;">
+            <div class="tcard">
+                <a href="/nuser/<%= pas.user_key %>/article/<%= pas.key %>" class="tcimg"><img src="https://hiiragi000.xsrv.jp/images/techlife/postl/S__Bitwith__2.jpeg" alt="Bitwith"/></a>
+                <div class="tctitle">
+                    <a href="/nuser/<%= pas.user_key %>/" class="left"><img src="https://yt3.ggpht.com/a-/AAuE7mCLkgNj6FxBeqRaZLKcMk2Cjw0aQD9La0fdTg=s68-c-k-c0x00ffffff-no-rj-mo"></a>
+                    <a href="/nuser/<%= pas.user_key %>/article/<%= pas.key %>"  class="right"><%= pas.title %></a>
+                </div>
+                <a href="/nuser/<%= pas.user_key %>/" class="tcsub"><%= pas.name %></a>
+                <% if pas.sales_type == 0 %>
+                    <div class="tcica"><nav class="fop">無料</nav></div>
+                <% elsif pas.sales_type ==1 %>
+                    <div class="tcica"><nav class="fop">有料</nav><nav class="fop">買い切り型</nav><nav class="fopb">￥<%= pas.price.to_s(:delimited) %>円</nav></div>
+                <% end %>
+            </div>
+        
+        </li>
+    <% end %>
+
+</ul>-->

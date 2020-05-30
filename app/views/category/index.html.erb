@@ -1,0 +1,14 @@
+<% provide(:index,"noindex") %>
+<%= render 'tmp/header',{ s: "category" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div class="main_container">
+            <h1>人気カテゴリー</h1>
+            <% @parentCategories.each do |cate| %>
+                <%= cate.name %>
+            <% end %>
+        </div>
+        <%= render 'tmp/userside' %>
+    </div>
+</main>
+<%= render 'tmp/footer' %>

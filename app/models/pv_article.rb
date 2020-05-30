@@ -1,0 +1,2 @@
+class PvArticle < ApplicationRecord
+end

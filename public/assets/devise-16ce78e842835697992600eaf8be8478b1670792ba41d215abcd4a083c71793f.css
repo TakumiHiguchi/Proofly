@@ -1,0 +1,212 @@
+@charset "UTF-8";
+/* line 1, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  color: #494949;
+}
+
+/* line 11, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello {
+  height: 100vh;
+}
+/* line 13, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #1A2980;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #26D0CE, #1A2980);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #076585, #fff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/* line 22, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  min-width: 1000px;
+  height: 100%;
+  margin: 0 20px;
+}
+/* line 30, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-left {
+  width: calc(65% - 20px);
+  margin-right: 20px;
+}
+/* line 33, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-left p {
+  font-size: 2em;
+  color: white;
+  margin: 20px;
+}
+/* line 39, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-right {
+  width: 29%;
+  background: rgba(255, 255, 255, 0.8);
+  height: calc(70% - 20px);
+  min-height: 600px;
+  padding: 20px 3%;
+  border: 1px solid #999;
+}
+/* line 46, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-right h2 {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 2em;
+}
+/* line 51, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-right h2 img {
+  width: 50%;
+  height: 100%;
+}
+/* line 56, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-right .clx {
+  line-height: 1.4em;
+  color: #999;
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* line 62, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-right .cls {
+  font-size: 0.6em;
+  color: #999;
+  text-align: center;
+  margin-bottom: 15px;
+}
+/* line 68, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-right .hrm {
+  margin-bottom: 15px;
+}
+/* line 71, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-right .alg {
+  font-size: 0.8em;
+}
+/* line 73, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .her .f-section .her-right .alg a {
+  color: #3897f0;
+}
+/* line 80, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.hello .howtp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 87, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.devisere {
+  margin-bottom: 10px;
+}
+/* line 89, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.devisere input {
+  width: calc(100% - 5px);
+  font-size: 1em;
+  height: 1.8em;
+  margin-bottom: 7px;
+}
+
+/* line 97, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.deviseac input {
+  display: block;
+  background: #00aced;
+  border-radius: 5px;
+  color: white;
+  width: calc(100% - 40px);
+  padding: 5px 20px;
+  text-decoration: none;
+  text-align: center;
+  margin: 0;
+  font-size: 1em;
+}
+
+/* line 111, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.rOP input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 131, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.linkBox {
+  display: block;
+  background: #00aced;
+  border-radius: 5px;
+  color: white;
+  width: calc(100% - 40px);
+  padding: 5px 20px 3px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* line 141, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.ghi {
+  width: 100%;
+  text-align: center;
+}
+
+/* line 147, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.nextarrow {
+  position: absolute;
+  top: calc(100% - 80px);
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+}
+
+/* line 156, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.arrow {
+  width: 30px;
+  height: 30px;
+  border: 5px solid;
+  border-color: transparent transparent white white;
+  transform: rotate(-45deg);
+}
+
+/* line 163, /Users/higuchitakumi/smapr/app/assets/stylesheets/devise.scss */
+.fuwa_box {
+  animation: fuwa 3s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes fuwa {
+  0% {
+    transform: translateY(0);
+  }
+  33.33333% {
+    transform: translateY(-10px);
+  }
+  66.66667% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

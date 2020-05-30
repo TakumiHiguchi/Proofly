@@ -1,0 +1,2 @@
+module ArticleIndexResultHelper
+end

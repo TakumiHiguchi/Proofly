@@ -1,0 +1,32 @@
+<%= render 'tmp/header',{ s: "" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div>
+            <div class="main_container">
+                <h1 class="setting_he">プライバシーと設定</h1>
+            </div>
+            <div class="main_container_n">
+                <div class="tnav">
+                    <nav>
+                        <ul>
+                            <li class="current"><a href="/settings">アカウント</a></li>
+                        </ul>
+                    </nav>
+                    
+                </div>
+                <div class="settings_inner">
+                <p class="p_gette">名前<a href="/nuser/<%= @settings[1] %>/edit">変更</a></p>
+                <p><%= @settings[0] %></p>
+                <p class="p_gette">Proofly ID</p>
+                <p><%= @settings[1] %></p>
+                <p class="p_gette">メールアドレス</p>
+                <p><%= @account.email %></p>
+                <p class="p_gette">パスワード</p>
+                <p>********</p>
+                </div>
+            </div>
+        </div>
+        <%= render 'tmp/userside' %>
+    </div>
+</main>
+<%= render 'tmp/footer' %>

@@ -1,0 +1,94 @@
+<%# タイトル等設定 %>
+<% provide(:title,"プロフィールの作成 | Proofly") %>
+<% provide(:index,"noindex") %>
+<%#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------%>
+<%= stylesheet_link_tag "toppage", :media => "all" %>
+<%= render 'tmp/header',{ s: "home" } %>
+<%= form_for(@detail,:url => {:action => :create}) do |f| %>
+<div class="popup_wrap">
+    <div class="whir">
+        
+        <section class="nnarf" id="n0">
+            <div class="secb">
+                <%= f.text_field :name, autofocus: true, autocomplete: "name",:placeholder => "ニックネーム（全ユーザーに公開されます）" ,class: "ias"%>
+            </div>
+            <div class="abssec">
+                <p class="sect">こんにちは。</p>
+                <p class="subsect">まずはあなたのお名前を教えてください。</p>
+            </div>
+            <div class="nexta">
+                次へ
+            </div>
+        </section>
+        <section class="nnarf" id="n1" style="display:none;">
+            <div class="secb">
+                <%= f.text_field :user_key, autofocus: true, autocomplete: "id",:placeholder => "ID（あなたのトップページのURLに使われます）" ,class: "ias"%>
+            </div>
+            <div class="abssec">
+                <p class="sect">こんにちは。</p>
+                <p class="subsect">次にIDを決めましょう。他の方が既に使用しているIDは使用できません。</p>
+            </div>
+            <div class="nexta">
+                次へ
+            </div>
+            <div class="prea">
+                前へ
+            </div>
+        </section>
+        <section class="nnarf" id="n2" style="display:none;">
+            <div class="secb">
+                <%= f.text_area :bio, autofocus: true,rows: 5, autocomplete: "bio",:placeholder => "自己紹介（全ユーザーに公開されます）" ,class: "ias"%>
+            </div>
+            <div class="abssec">
+                <p class="sect">こんにちは。</p>
+                <p class="subsect">簡単な自己紹介文を書いてみましょう。</p>
+            </div>
+            <div class="nexta">
+                次へ
+            </div>
+            <div class="prea">
+                前へ
+            </div>
+        </section>
+        <section class="nnarf" id="n3" style="display:none;">
+            <div class="secb">
+                <div class="debt rOP deviseac">
+                <%= f.submit "さあ、Prooflyを始めましょう！" %>
+                </div>
+            </div>
+            <div class="abssec">
+                <p class="sect">他にも色々な設定があります。</p>
+                <p class="subsect">詳しくはユーザーページをご確認ください。</p>
+            </div>
+            <div class="nexta">
+                <%= f.hidden_field :thum1,:value => "" %>
+                <%= f.hidden_field :thum2,:value => "" %>
+                <%= f.hidden_field :location,:value => "" %>
+                <%= f.hidden_field :website,:value => "" %>
+                <%= f.hidden_field :user_id,:value => current_user.id.to_i %>
+            </div>
+            <div class="prea">
+                前へ
+            </div>
+        </section>
+    </div>
+</div>
+
+<% end %>
+
+<script>
+    jQuery( function() {
+        var count=0;
+        jQuery( '.nexta' ).click( function() {
+            $('#n'+count).css({display:"none"});
+            $('#n'+(count+1)).css({display:"flex"});
+            count++;
+        } );
+        jQuery( '.prea' ).click( function() {
+            $('#n'+count).css({display:"none"});
+            $('#n'+(count-1)).css({display:"flex"});
+            count--;
+        } );
+    } );
+    
+</script>

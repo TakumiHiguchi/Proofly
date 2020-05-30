@@ -1,0 +1,154 @@
+<%= render 'tmp/header',{ s: "" } %>
+<main class="tofx">
+    <%= render 'tmp/usertop' %>
+    <div class="fxse">
+        <div class="sdwe">
+            
+            <div class="topic">
+                <div class="main_flame">
+                    <div class="tnav">
+                        <nav>
+                            <ul>
+                                <li class="current"><a href="/nuser/<%= @currentUser.user_key %>">ホーム</a></li>
+                                <li class="des"><a href="/nuser/<%= @currentUser.user_key %>/article">記事</a></li>
+                                <li class="des"><a href="/nuser/<%= @currentUser.user_key %>/book" >本</a></li>
+                                <li class="des"><a href="/nuser/<%= @currentUser.user_key %>/image" >画像</a></li>
+                                <li class="des"><a href="/nuser/<%= @currentUser.user_key %>/video" >動画</a></li>
+                                <li class="des"><a href="/nuser/<%= @currentUser.user_key %>/story" >ストーリー</a></li>
+                                <li class="des"><a href="/nuser/<%= @currentUser.user_key %>/pr">販売中のPr</a></li>
+                            </ul>
+                        </nav>
+                        
+                    </div>
+                    <div class="tmai">
+                        <% ac=0 %>
+                        <h2>最近投稿された記事</h2>
+                        <% @articles.each do |pas| %>
+                            <% if ac ==4 then break; end %>
+                            <a href="/nuser/<%= @currentUser.user_key %>/article/<%= pas.key %>" class="artb1">
+                                <div class="left">
+                                    <img src="https://hiiragi000.xsrv.jp/images/techlife/postl/S__Bitwith__2.jpeg" alt="Bitwith"/>
+                                </div>
+                                <div class="right">
+                                    <h3 class="toptitle"><%= pas.title %></h3>
+                                    <p class="dest"><%= pas.created_at.strftime("公開: %Y年%m月%d日") %>　<%= pas.updated_at.strftime("最終更新: %Y年%m月%d日") %></p>
+                                    <p class="dest" style="margin-top:5px;"><%= pas.description.truncate(50) %></p>
+                                </div>
+                            </a>
+                            <% ac+=1 %>
+                        <% end %>
+                        <% if ac==0 then %>
+                            <p>このユーザーにはコンテンツがありません。</p>
+                        <% else %>
+                            <a href="/nuser/<%= @userDetail.user_key %>/article" style="color:#aaa;font-size:0.8em;">もっと見る</a>
+                        <% end %>
+                    </div>
+                </div>
+                <%= render 'tmp/userside' %>
+            </div>
+        </div>
+    </div>
+    <a class="_wrap" href="/nuser/<%= @settings[1] %>"></a>
+    <div class="wrap_inner">
+        <div class="wrap_header">
+            <p>プロフィールの編集</p>
+            <a class="linkContainer s23lp" onClick="$('.submit').click()">保存する</a>
+        </div>
+        <div class="wrap_main">
+            <%= form_for(@currentUser,:url => {:action => :update}) do |f| %>
+                <div id="img_field" onClick="$('#file').click()" >
+                    <% if @currentUser.thum1? then %>
+                        <%= image_tag @currentUser.thum1.to_s %>
+                    <% else %>
+                        <p>クリックして画像を追加</p>
+                        <span class="ripple"></span>
+                    <% end %>
+                </div>
+                <%= f.file_field :thum1, class: "image", style: "display:none;", id: "file"%>
+                
+                <div class="userMainContainer">
+                    <div id="img_field1" onClick="$('#thum2').click()" >
+                        <% if @currentUser.thum2? then %>
+                            <%= image_tag @currentUser.thum2.to_s %>
+                        <% else %>
+                            <%= image_tag "noImage.png" %>
+                            <span class="ripple"></span>
+                        <% end %>
+                    </div>
+                    <%= f.file_field :thum2, class: "image", style: "display:none;", id: "thum2"%>
+                </div>
+                <div class="userPrf">
+                    <p>名前 :</p>
+                    <%= f.text_field :name,:placeholder => "名前を追加" ,class: "nic"%>
+                    <%= f.hidden_field :user_key,:placeholder => "ID" ,class: "ias"%>
+                    <div class="bio">
+                        <p>自己紹介 :</p>
+                        <%= f.text_area :bio,:placeholder => "自己紹介を追加" ,class: "bio"%>
+                    </div>
+                    <div class="location">
+                        <p>場所 :</p>
+                        <%= f.text_field :location,:placeholder => "場所を追加"%>
+                    </div>
+                    <div class="website">
+                        <p>ウェブサイト :</p>
+                        <%= f.text_field :website,:placeholder => "ウェブサイトを追加"%>
+                    </div>
+                </div>
+                
+                <%= f.submit "保存する" ,class: "submit",style: "display:none;"%>
+                
+            <% end %>
+        </div>
+    </div>
+</main>
+<%= render 'tmp/footer' %>
+
+<script>
+   //画像
+   $(function(){
+     $fileField = $('#file')
+    
+     // 選択された画像を取得し表示
+     $($fileField).on('change', $fileField, function(e) {
+       file = e.target.files[0]
+       reader = new FileReader(),
+       $preview = $("#img_field");
+    
+       reader.onload = (function(file) {
+         return function(e) {
+           $preview.empty();
+           $preview.append($('<img>').attr({
+             src: e.target.result,
+             width: "100%",
+             class: "preview",
+             title: file.name
+           }));
+         };
+       })(file);
+       reader.readAsDataURL(file);
+     });
+     
+      $file = $('#thum2')
+     
+      // 選択された画像を取得し表示
+      $($file).on('change', $file, function(e) {
+        file = e.target.files[0]
+        reader = new FileReader(),
+        $preview = $("#img_field1");
+     
+        reader.onload = (function(file) {
+          return function(e) {
+            $preview.empty();
+            $preview.append($('<img>').attr({
+              src: e.target.result,
+              width: "100%",
+              class: "preview",
+              title: file.name
+            }));
+          };
+        })(file);
+        reader.readAsDataURL(file);
+      });
+   });
+   
+</script>

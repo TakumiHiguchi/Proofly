@@ -1,0 +1,36 @@
+<%# タイトル等設定 %>
+<% provide(:title,"#{@userDetail.name}さんのプロフィール | Proofly") %>
+<% provide(:index,"noindex") %>
+<%#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------%>
+<%= render 'tmp/header',{ s: "" } %>
+<%= render 'tmp/usertop' %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div>
+            <div class="main_container_n">
+                <div class="tnav">
+                    <nav>
+                        <ul>
+                            <li class="des"><a href="/nuser/<%= @userDetail.user_key %>">ホーム</a></li>
+                            <li class="des"><a href="/nuser/<%= @userDetail.user_key %>/article">記事</a></li>
+                            <li class="current"><a href="/nuser/<%= @userDetail.user_key %>/book" >本</a></li>
+                            <li class="des"><a href="/nuser/<%= @userDetail.user_key %>/image" >画像</a></li>
+                            <li class="des"><a href="/nuser/<%= @userDetail.user_key %>/video" >動画</a></li>
+                            <li class="des"><a href="/nuser/<%= @userDetail.user_key %>/story" >ストーリー</a></li>
+                            <li class="des"><a href="/nuser/<%= @userDetail.user_key %>/pr">販売中のPr</a></li>
+                        </ul>
+                    </nav>
+                    
+                </div>
+                <div class="tmai">
+                    <img "alt="coming soon" src="<%= $url_at %>/proofly/cmg.jpeg" />
+                </div>
+            </div>
+        </div>
+    <div class="sidebar">
+        <%= render 'tmp/userside' %>
+    </div>
+</main>
+<%= render 'tmp/footer' %>
+
+

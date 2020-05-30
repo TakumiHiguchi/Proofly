@@ -1,0 +1,2 @@
+module FixedPageHelper
+end

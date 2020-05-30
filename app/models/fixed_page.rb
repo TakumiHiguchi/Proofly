@@ -1,0 +1,2 @@
+class FixedPage < ApplicationRecord
+end

@@ -1,0 +1,108 @@
+
+
+<%= render 'tmp/header',{ s: "" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div class="main_container_n">
+            <div class="tnav">
+            	<nav>
+    	            <ul>
+                    	<li class="current"><a href="/work">記事</a></li>
+                        <li class="des"><a href="/book" >本</a></li>
+                        <li class="des"><a href="/image" >画像</a></li>
+                        <li class="des"><a href="/video" >動画</a></li>
+                        <li class="des"><a href="/story" >ストーリー</a></li>
+                   </ul>
+                </nav>
+            </div>
+            <div class="artListContainer">
+            	<p><%= @articleCount %>記事</p>
+            	<%= render 'tmp/workArticleList' %>
+            </div>
+        </div>
+        <%= render 'tmp/userside' %>
+    </div>
+    <a class="_wrap" href="/work"></a>
+    <div class="wrap_inner">
+        <div class="wrap_header">
+            <p>indexの申請</p>
+        </div>
+        <div class="wrap_main">
+            <%= form_for(@article_index,:url => {:action => :create}) do |f| %>
+                <div class="scoreinner">
+                    <p>Proofly Scoreを<span style="color:#00aced">5</span>使用して以下の記事のindexを申請しますか？</p>
+                    <p>現在のProofly Score : <%= @score.score %></p>
+                    <% if @score.score < 5 %>
+                        <p style="color:red;margin:5px 0;">Proofly Scoreが足りません。</p>
+                    <% elsif !@aI.nil? %>
+                        <p style="color:red;margin:5px 0;">すでに申請済みです。</p>
+                    <% end %>
+                    <div class="work_container" style="border-top:1px solid #f0f0f0;margin:10px 0 20px 0;">
+                        <div class="left">
+                            <a href="
+                                <% if @articleData.article_status == "publish" then %>
+                                    /nuser/<%= @settings[1] %>/article/<%= @articleData.key %>
+                                <% else %>
+                                   /article/<%= @articleData.key %>/edit
+                                <% end %>
+                            " class="ind">
+                                <p class="ats"><%= @articleData.title %></p>
+                                <p style="font-size:0.8em;color:#aaa;">
+                                    <% if @articleData.article_status == "publish" then %>
+                                        <span style="color:#aaa;font-weight:bold;">公開中 ( <% if @articleData.index %>index<% else %>noindex<% end %> )</span>
+                                    <% else %>
+                                        <span style="color:#aaa;font-weight:bold;">下書き</span>
+                                    <% end %>
+                                    <% if @articleData.sales_type == 0 then %>
+                                        無料
+                                    <% elsif @articleData.sales_type == 1 then  %>
+                                        有料 （価格:<%= @articleData.price.to_s(:delimited) %>円 アフィリエイト報酬率: <%= @articleData.afe %>%）
+                                    <% end %>
+                                </p>
+                                <p style="font-size:0.8em;color:#aaa;">
+                                    作成日:<%= @articleData.created_at.strftime("%Y年%m月%d日") %>
+                                    編集日:<%= @articleData.updated_at.strftime("%Y年%m月%d日") %>
+                                </p>
+                            </a>
+                            <span style="font-size:0.8em;color:#aaa;">タグ: </span>
+                            <% @articleData.post_tag_relations.each do |a| %>
+                                <a href="/tag/<%= a.tag.tag_key %>" target="_blank" style="font-size:0.8em;color:#aaa;margin:0 3px;">#<%= a.tag.name %></a>
+                            <% end %>
+                            <span style="font-size:0.8em;color:#aaa;"><br />カテゴリー: </span>
+                            <% @articleData.post_category_relations.each do |a| %>
+                                    <a href="/tag/<%= a.category.cate_key %>" target="_blank" style="font-size:0.8em;color:#aaa;margin:0 3px;">#<%= a.category.name %></a>
+                            <% end %>
+                        </div>
+                        <div class="right">
+
+                        </div>
+                </div>
+                <div style="text-align:center;width:100%;">
+                    <% if @score.score >= 5 && @aI.nil? %>
+                        <a class="linkContainer s23lp btn_act" onClick="$('.submit').click()">indexを申請する</a>
+                    <% else %>
+                        <a class="linkContainer s23lp btn_dea">indexを申請する</a>
+                    <% end %>
+                </div>
+                <div class="hint">
+                    <i class="fa fa-question-circle-o" aria-hidden="true"></i> <a href="#">よくあるお問い合わせ : index、noindexってなんですか？</a><br />
+                    <i class="fa fa-question-circle-o" aria-hidden="true"></i> <a href="#">Prooflyのindexについて</a><br />
+                </div>
+                <%= f.submit "indexを申請する" ,class: "submit",style: "display:none;"%>
+                <%= f.hidden_field :article_id,:value => "#{@articleData.id}" %>
+            <% end %>
+        </div>
+</main>
+<%= render 'tmp/footer' %>
+<script>
+$(window).on('scroll', function() {
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+          $('.jscroll').jscroll({
+            contentSelector: '.skill-list',
+            nextSelector: 'span.next:last a'
+          });
+    }
+});
+</script>

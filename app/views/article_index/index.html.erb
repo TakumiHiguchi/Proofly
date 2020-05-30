@@ -1,0 +1,38 @@
+<%= render 'tmp/header',{ s: "" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div class="main_container">
+			<% @artIndex.each do |pas| %>
+				<div class="index_table">
+					<a href="/nuser/<%= pas.user_key %>/article/<%= pas.key %>" class="title">
+						<%= pas.title %>
+					</a>
+					<div class="name">
+						<%= pas.name %>
+					</div>
+					<div class="botton">
+						<%= link_to '承認', "/article_index/#{pas.id}?commit=承認", method: :delete %>
+						<%= link_to '非承認', "/article_index/#{pas.id}?commit=非承認", method: :delete %>
+					</div>
+				</div>
+			<% end %>
+
+        </div>
+        <%= render 'tmp/userside_management' %>
+    </div>
+</main>
+<%= render 'tmp/footer' %>
+
+
+<script>
+$(window).on('scroll', function() {
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+          $('.jscroll').jscroll({
+            contentSelector: '.skill-list',
+            nextSelector: 'span.next:last a'
+          });
+    }
+});
+</script>

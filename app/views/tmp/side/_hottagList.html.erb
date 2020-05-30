@@ -1,0 +1,17 @@
+<%= stylesheet_link_tag "userside", :media => "all" %>
+<%= stylesheet_link_tag "tag", :media => "all" %>
+<aside class="sub_flame">
+    <div class="headline_tagside">人気タグ</div>
+    <% count=0 %>
+    <% @tagData.each do |pas| %>
+        <% count+=1 %>
+        <a class="tagList" href="/tag/<%= pas.tag_key %>">
+            <div class="tagn">
+                <%= count.to_s %>.人気
+            </div>
+            <div class="tagHeadline">#<%=pas.name %></div>
+            <div class="tagcou"><%=pas.tag_count %>件の投稿</div>
+        </a>
+    <% end %>
+    <a class="morelink" href="/tag">もっと見る</a>
+</aside>

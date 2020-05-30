@@ -1,0 +1,42 @@
+<%= render 'tmp/header',{ s: "" } %>
+<main class="tofx">
+    <div class="fxse">
+        <div class="sdwe">
+            
+            <div class="topic">
+                <div class="main_flame">
+                    <div class="tnav">
+                        <nav>
+                            <ul>
+                                <li class="current"><a href="/work/purchased">記事</a></li>
+                                <li class="des"><a href="/book/purchased" >本</a></li>
+                                <li class="des"><a href="/image/purchased" >画像</a></li>
+                                <li class="des"><a href="/video/purchased" >動画</a></li>
+                                <li class="des"><a href="/story/purchased" >ストーリー</a></li>
+                            </ul>
+                        </nav>
+                        
+                    </div>
+                    <div class="tmai">
+                        <% @PW.each do |pas| %>
+                            <a href="/nuser/<%= pas.user_key %>/article/<%= pas.key %>" class='paid-con' style="display:block;margin-bottom:10px;">
+                                <div class='paidinner'>
+                                    <div class='pacard'>
+                                        <div class='p-left'>
+                                            <img src="/uploads/article/thum/<%= pas.thum.to_s %>">
+                                        </div>
+                                        <div class='p-right'>
+                                            <p class='tcdw'><%= pas.title %></p>
+                                            <p class='fouw'><%= pas.name %></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        <% end %>
+                    </div>
+                </div>
+                <%= render 'tmp/userside' %>
+            </div>
+        </div>
+    </div>
+</main>

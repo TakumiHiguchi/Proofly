@@ -1,0 +1,40 @@
+<%= render 'tmp/header',{ s: "" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div class="main_container">
+        	<div class="index_table">
+	        	<div class="title">
+					タイトル
+				</div>
+				<div class="name">
+					結果
+				</div>
+				<div class="botton">
+					判定日時
+				</div>
+			</div>
+			<div class="skill-list jscroll">
+	        	<% @artIndex.each do |pas| %>
+					<div class="index_table">
+						<a href="/nuser/<%= pas.user_key %>/article/<%= pas.key %>" class="title">
+							<%= pas.title %>
+						</a>
+						<div class="name">
+							<% if pas.result=="t" %>
+								承認
+							<% else %>
+								非承認
+							<% end %>
+						</div>
+						<div class="botton">
+							<%= pas.created_at.strftime("%Y年%m月%d日 %H:%M:%S") %>
+						</div>
+					</div>
+				<% end %>
+			</div>
+			<%= paginate @artIndex %>
+        </div>
+        <%= render 'tmp/userside' %>
+    </div>
+</main>
+<%= render 'tmp/footer' %>

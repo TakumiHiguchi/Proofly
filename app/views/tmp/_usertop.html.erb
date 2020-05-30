@@ -1,0 +1,31 @@
+<div class="timghe">
+    <%= image_tag @userDetail.thum1.to_s %>
+</div>
+<div class="wdet">
+    <div class="erf">
+        <div class="inhgf">
+            <div class="icesob">
+                <div class="userimg">
+                    <% if @userDetail.thum2.length > 0 then %>
+                        <%= image_tag @userDetail.thum2.to_s %>
+                    <% else %>
+                        <%= image_tag "noImage.png" %>
+                    <% end %>
+                </div>
+                <div class="weweq">
+                    <h1><%= @userDetail.name %></h1>
+                    <p style="color:#999;">@<%= @userDetail.user_key %></p>
+                    <p style="font-size:0.9em;color:#999;"><span style="color:#494949;"><%=@followCount[1] %></span> フォロワー</p>
+                </div>
+            </div>
+            <div class="ands">
+                <%= render 'tmp/follow_button', user: @userDetail , current_user: @currentUser  %>
+            </div>
+        </div>
+        <div class="qwed">
+            <%= @userDetail.bio %>
+        </div>
+    </div>
+</div>
+
+

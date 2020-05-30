@@ -1,0 +1,15 @@
+<div class="main_flame_inner" style="border-bottom:1px solid #f0f0f0;margin-bottom:15px">
+    <h2 class="nosinh2">その他のおすすめ</h2>
+    <div class="skill-list jscroll">
+        <% count = 0 %>
+        <% @infArticles.each do |pas| %>
+          <% if count % 10 == 0 %>
+              <%= render 'tmp/toppage/articleListHead',{ article: pas } %>
+          <% else %>
+              <%= render 'tmp/toppage/articleList',{ article: pas } %>
+          <% end %>
+          <% count += 1 %>
+        <% end %>
+        <%= paginate @infArticles %>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<% if @Recommended.length > 0 %>
+    <div class="main_flame_inner" style="border-bottom:1px solid #f0f0f0;padding-bottom:5px;margin-bottom:5px;">
+        <h2 class="nosinh2">あなたへのおすすめ</h2>
+        <% c=0 %>
+        <% @Recommended.each do |pas| %>
+            <% if c==0 %>
+                <%= render 'tmp/toppage/articleListHead',{ article: pas } %>
+            <% else %>
+                <%= render 'tmp/toppage/articleList',{ article: pas } %>
+            <% end %>
+            <% c+=1 %>
+        <% end %>
+    </div>
+<% end %>

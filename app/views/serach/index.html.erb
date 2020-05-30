@@ -1,0 +1,76 @@
+<% provide(:index,"noindex") %>
+
+<%= render 'tmp/header',{ s: "" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div>
+            <div class="main_container_n">
+                <div class="tnav">
+                        <nav>
+                            <ul>
+                                <li class="current"><a href="/nuser/">記事</a></li>
+                            </ul>
+                        </nav>
+                </div>
+                <div class="articleContainer">
+                    <div class="jscroll article-list">
+                        <% @sArticles.each do |article| %>
+                            <a href="/nuser/<%= article.user_key %>/article/<%= article.key %>" class="artList">
+                                <div class="p-img" style="padding:0px 10px 0px 0;">
+                                    <% if article.thum then %>
+                                        <% if Rails.env.production? %>
+                                              <%
+                                                s3 = Aws::S3::Resource.new(
+                                                  region: ENV['S3_REGION'],
+                                                  credentials: Aws::Credentials.new(
+                                                    ENV['S3_ACCESS_KEY'],
+                                                    ENV['S3_SECRET_KEY']
+                                                  )
+                                                )
+                                                signer = Aws::S3::Presigner.new(client: s3.client)
+                                                pass = "uploads/article/thum/#{article.thum.to_s}"
+                                                presigned_url = signer.presigned_url(:get_object,bucket: ENV['S3_BUCKET'], key: pass, expires_in: 60)
+                                            %>
+
+                                          <%= image_tag presigned_url, class: '' %>
+                                        <% end %>
+                                    <% else %>
+                                        <div class="andj">no image</div>
+                                    <% end %>
+                                </div>
+                                <div class="p-cont">
+                                    <div class="title"><%= article.title %></div>
+                                    <% ua = request.env["HTTP_USER_AGENT"]
+                                    if(ua.include?('Mobile') || ua.include?('Android')) then %>
+                                    <% else %>
+                                      <p style="color:#aaa;font-size:0.8em;"><%=strip_tags article.description.gsub(/\r\n|\r|\n|\s|\t/, "").truncate(50) %></p>
+                                    <% end %>
+                                    <p style="color:#aaa;font-size:0.8em;"><%= article.name %>・<%= article.created_at.strftime("%Y年%m月%d日に投稿") %></p>
+                                </div>
+                            </a>
+                        <% end %>
+                        <%= paginate @sArticles %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <%= render 'tmp/ad/google/sidetop' %>
+            <%= render 'tmp/side/hottagList' %>
+        </div>
+    </div>
+</main>
+<%= render 'tmp/footer' %>
+
+<script>
+$(window).on('scroll', function() {
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+          $('.jscroll').jscroll({
+            contentSelector: '.article-list',
+            nextSelector: 'span.next:last a'
+          });
+    }
+});
+</script>

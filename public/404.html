@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+  <meta charset="utf-8"/>
+  <title>お探しのページが見つかりません | Proofly</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+      <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <style>
+    html, body, div, span, applet, object, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        margin: 0;
+        padding: 0;
+        font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+        color:#494949;
+    }
+    html,body{
+        background:#f8f8f8;
+    }
+  @media screen and (min-width: 1000px) {
+    .main_header {
+      width: 1000px;
+      min-width: 1000px;
+      background: white;
+      padding: 2px calc(calc(100% - 1000px)/2);
+      margin: 0;
+    }
+    .main_header .topwer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+    }
+    .main_header .topwer .top_icon {
+      height: 40px;
+      padding: 5px 0;
+    }
+    .main_header .topwer .top_icon h1 {
+      height: 100%;
+    }
+    .main_header .topwer .top_icon h1 img {
+      height: 100%;
+      margin: 5px 0;
+    }
+    .main_header .topwer .top_icon img {
+      height: 100%;
+    }
+    .main_header .topwer div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .main_header .topwer div .userimg {
+      width: 36px;
+      height: 36px;
+      margin-right: 15px;
+    }
+    .main_header .topwer div .userimg img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #f0f0f0;
+    }
+    .main_header .topwer div .linkc {
+      display: block;
+      background: #00aced;
+      border-radius: 5px;
+      color: white;
+      padding: 5px 20px 3px 20px;
+      margin: 0 5px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .main_header .tnav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 15px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .main_header .tnav nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      width: 80%;
+      text-align: center;
+    }
+    .main_header .tnav nav li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 10px;
+      min-width: 70px;
+    }
+    .main_header .tnav nav a {
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      color: #555;
+      padding-bottom: 5px;
+      font-size: 0.8em;
+    }
+    .main_header .tnav nav li.current {
+      border-bottom: 3px solid #00aced;
+    }
+    .main_header .tnav nav li.des {
+      border-bottom: 3px solid #ffffff;
+    }
+    .main_header .tnav nav li:hover {
+      color: #E7DA66;
+      border-bottom: 3px solid #00aced;
+    }
+    .main_header .tnav nav li a {
+      cursor: pointer;
+    }
+    h1{
+        font-size:1.4em;
+        font-weight:bold;
+        margin-bottom:40px;
+    }
+    p{
+        margin-bottom:40px;
+    }
+    .dialog{
+        text-align:center;
+        padding:100px 0;
+        width:30%;
+        margin:0 35%;
+    }
+    .Inputline{
+        border:1px solid #f0f0f0;
+        border-radius:5px;
+        padding:0 7px;
+        margin:0 10px;
+        width:calc(100% - 34px);
+        background:white;
+    }
+    .fa-search{
+        color:#aaa;
+    }
+    .searchInput{
+        background-color:transparent;
+        border:none;
+        padding:0 0 0 5px;
+        width:200px;
+        word-wrap:break-word;
+        outline:none;
+        -webkit-tap-highlight-color:transparent;
+        height:43px;
+        font-size:1em;
+        width:calc(100% - 34px);
+    }
+  }
+  
+  
+  @media screen and (max-width: 1000px) {
+    .main_header {
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .main_header .topwer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 50px;
+    }
+    .main_header .topwer .top_icon {
+      height: 40px;
+      padding: 5px 0 5px 10px;
+    }
+    .main_header .topwer .top_icon h1 {
+      height: 100%;
+    }
+    .main_header .topwer .top_icon h1 img {
+      height: 100%;
+      margin: 5px 0;
+    }
+    .main_header .topwer .top_icon img {
+      height: 100%;
+    }
+    .main_header .topwer div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .main_header .topwer div .userimg {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    .main_header .topwer div .userimg img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #f0f0f0;
+    }
+    .main_header .topwer div .linkc {
+      display: block;
+      background: #00aced;
+      border-radius: 5px;
+      color: white;
+      padding: 5px 20px 3px 20px;
+      margin: 0 5px;
+      text-decoration: none;
+      text-align: center;
+    }
+    h1{
+        font-size:1.4em;
+        font-weight:bold;
+    }
+    .dialog{
+        text-align:center;
+        padding:100px 0;
+        margin:0 10px;
+    }
+    .Inputline{
+        border:1px solid #f0f0f0;
+        border-radius:5px;
+        padding:0 7px;
+        margin:0 10px;
+        width:calc(100% - 34px);
+        background:white;
+    }
+    .fa-search{
+        color:#aaa;
+    }
+    .searchInput{
+        background-color:transparent;
+        border:none;
+        padding:0 0 0 5px;
+        width:200px;
+        word-wrap:break-word;
+        outline:none;
+        -webkit-tap-highlight-color:transparent;
+        height:43px;
+        font-size:1em;
+        width:calc(100% - 34px);
+    }
+  }
+
+  </style>
+</head>
+
+<body class="rails-default-error-page">
+  <!-- This file lives in public/404.html -->
+  <header class="main_header">
+      <div class="topwer">
+          <a class="top_icon" href="/"><img alt="Proofly" src="assets/proofly.png"></a>
+          <div>
+          </div>
+      </div>
+  </header>
+
+  <div class="dialog">
+    <div>
+      <h1>お探しのページが見つかりません</h1>
+      <p>あなたがアクセスしたページは、削除されたかURLが変更されているため表示することができません。</p>
+    </div>
+    <form action="/serach" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+                        <div class="Inputline">
+                            <i class="fas fa-search"></i>
+                            <input type="text" name="query" id="query" value="" class="searchInput" placeholder="キーワードやタグ名で検索">
+                      </div>
+    </form>
+  </div>
+</body>
+</html>

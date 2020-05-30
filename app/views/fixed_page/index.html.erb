@@ -1,0 +1,19 @@
+<% provide(:title,'管理') %>
+<% provide(:index,"noindex") %>
+<!----------------------------------------------------------------------------->
+<%= render 'tmp/header',{ s: "" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div class="main_container">
+        <a href="fixed_page/new">新規</a>
+        <% @ar.each do |pas| %>
+            <%=pas.title %>
+            <a href="fixed_page/<%= pas.fix_key %>/edit">編集</a>
+        <% end %>
+        </div>
+        <%= render 'tmp/userside_management' %>
+    </div>
+</main>
+<%= render 'tmp/footer' %>
+
+

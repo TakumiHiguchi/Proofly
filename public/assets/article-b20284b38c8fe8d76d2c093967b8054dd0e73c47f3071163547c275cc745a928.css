@@ -1,0 +1,273 @@
+@charset "UTF-8";
+/* line 8, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  color: #494949;
+}
+
+/* line 18, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+html, body {
+  height: 100%;
+  background: #f8f8f8;
+}
+
+/* line 22, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* line 27, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe {
+  width: 1000px;
+  min-width: 1000px;
+  margin: 10px 0 0 0;
+}
+/* line 31, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic {
+  margin-bottom: 10px;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: #f8f8f8;
+}
+/* line 38, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy {
+  width: calc(1000px - 310px);
+  margin-right: 10px;
+}
+/* line 41, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .thum {
+  width: 100%;
+}
+/* line 43, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .thum img {
+  display: block;
+  width: 100%;
+}
+/* line 48, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .main_flame {
+  background: white;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 10px;
+}
+/* line 52, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .main_flame .tmai {
+  width: calc(100% - 40px);
+  padding: 0 20px;
+}
+/* line 55, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .main_flame .tmai img {
+  width: 100%;
+}
+/* line 60, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .btm_flame {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+/* line 64, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .btm_flame .heds {
+  color: #808080;
+  margin-bottom: 10px;
+}
+/* line 68, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .btm_flame .autcont {
+  display: flex;
+}
+/* line 70, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .btm_flame .autcont .left {
+  width: 10%;
+}
+/* line 72, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .btm_flame .autcont .left img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* line 79, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .btm_flame .autcont .right {
+  width: calc(90% - 20px);
+  margin-left: 20px;
+}
+/* line 82, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.fxse .sdwe .topic .mauy .btm_flame .autcont .right .aucn {
+  font-weight: bold;
+}
+
+/* line 93, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox {
+  width: calc(100% - 40px);
+  height: 100%;
+  padding: 20px 20px 20px 20px;
+  background: white;
+}
+/* line 99, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox img {
+  width: 100%;
+  margin: 0 0 40px 0;
+}
+/* line 103, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox blockquote {
+  margin: 10px 0;
+}
+/* line 106, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox p {
+  line-height: 2em;
+  margin: 0 0 50px 0;
+}
+/* line 110, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox ul, .articleBox ol {
+  margin: 20px 0 50px 30px;
+}
+/* line 113, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox .bold {
+  font-weight: bold;
+}
+/* line 116, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox .quoteBox {
+  width: 100%;
+  font-size: 0.8em;
+  text-align: right;
+}
+/* line 121, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox h2 {
+  position: relative;
+  font-weight: 580;
+  padding: 5px;
+  margin: 10px 0;
+  font-weight: bold;
+  background: #66cdaa;
+  color: #fffafa;
+}
+/* line 130, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox h3 {
+  position: relative;
+  font-weight: bold;
+  font-size: 1em;
+  color: #808080;
+  padding: 2px 30px;
+  margin: 5px 0 25px 0;
+}
+/* line 137, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox h3:before {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: '';
+  background: #E0E7AA;
+  width: 0.8em;
+  height: 0.8em;
+}
+/* line 149, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox h4 {
+  position: relative;
+  font-weight: bold;
+  font-size: 1em;
+  color: #808080;
+  padding: 2px 0 2px 40px;
+  margin: 5px 0 10px 0;
+}
+/* line 156, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.articleBox h4:before {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  content: '';
+  background: #E0E7AA;
+  width: 0.8em;
+  height: 0.8em;
+}
+
+/* line 170, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.inpPost-h1 {
+  padding: 20px 20px 0 20px;
+  background: white;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+/* line 176, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.inpPost-auther_date_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  padding: 10px 20px 10px 30px;
+  background: white;
+  color: #808080;
+  border-bottom: 1px solid #e0e0e0;
+}
+/* line 185, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.inpPost-auther_date_box div {
+  display: flex;
+  align-items: center;
+}
+/* line 188, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.inpPost-auther_date_box div a {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+/* line 193, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.inpPost-auther_date_box div a img {
+  height: 100%;
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* line 205, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.toc_box {
+  width: calc(100% - 20px);
+  padding: 10px 0 10px 20px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+}
+/* line 210, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.toc_box dl {
+  width: 100%;
+}
+/* line 212, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.toc_box dl dt {
+  position: relative;
+  color: #808080;
+}
+/* line 217, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.toc_box dl dd a {
+  text-decoration: none;
+  line-height: 1.5em;
+}
+/* line 220, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.toc_box dl dd a:hover {
+  text-decoration: underline;
+}
+
+/* line 227, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.lv_H2 a {
+  padding-left: 10px;
+  color: #494949;
+}
+
+/* line 228, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.lv_H3 a {
+  padding-left: 30px;
+  color: #494949;
+}
+
+/* line 229, /Users/higuchitakumi/smapr/app/assets/stylesheets/article.scss */
+.attrb {
+  margin: 20px 0;
+}

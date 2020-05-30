@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag "userside", :media => "all" %>
+<aside class="sub_flame">
+    <div class="headline_tagside">最近承認された記事</div>
+    <% @newIndexList.each do |pas| %>
+        <a href="" class="newIndexList">
+            <% if Rails.env.production? %>
+                <% if pas.thum then %>
+                    <%
+                        s3 = Aws::S3::Resource.new(
+                            region: ENV['S3_REGION'],
+                            credentials: Aws::Credentials.new(
+                                ENV['S3_ACCESS_KEY'],
+                                ENV['S3_SECRET_KEY']
+                            )
+                        )
+                        signer = Aws::S3::Presigner.new(client: s3.client)
+                        pass = "uploads/article/thum/#{pas.thum.to_s}"
+                        presigned_url = signer.presigned_url(:get_object,bucket: ENV['S3_BUCKET'], key: pass, expires_in: 60)
+                    %>
+                    <%= image_tag presigned_url, class: '' %>
+                <% end %>
+            <% else %>
+                <div class="andj">no image</div>
+            <% end %>
+            <div class="title"><%= pas.title %></div>
+        </a>
+    <% end %>
+</aside>

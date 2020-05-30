@@ -1,0 +1,28 @@
+<% provide(:title,'Prooflyヘルプセンター') %>
+<% provide(:index,"noindex") %>
+<!----------------------------------------------------------------------------->
+<%= render 'tmp/header',{ s: "" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <%= render 'tmp/side/helpSide' %>
+        <div>
+            <div class="main_container_a">
+                <div class="helpContainer">
+                    <h1><%= @cont.title.html_safe %></h1>
+                    <div class="helprap">
+                        <div class="helpInner">
+                            <%= @cont.content.html_safe %>
+                        </div>
+                        <%= render 'tmp/footer' %>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</main>
+
+

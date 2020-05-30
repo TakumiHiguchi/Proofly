@@ -1,0 +1,59 @@
+<div class="skill-list jscroll">
+    <% @infArticles.each do |pas| %>
+        <div class="work_container">
+            <div class="left">
+                <a href="
+                <% if pas.article_status == "publish" then %>
+                    /nuser/<%= @settings[1] %>/article/<%= pas.key %>
+                <% else %>
+                    /article/<%= pas.key %>/edit
+                <% end %>
+                " class="ind">
+                    <p class="ats"><%= pas.title %></p>
+                    <p style="font-size:0.8em;color:#aaa;">
+                        <% if pas.article_status == "publish" then %>
+                            <span style="color:#aaa;font-weight:bold;">公開中 ( <% if pas.index %>index<% else %>noindex<% end %> )</span>
+                        <% else %>
+                            <span style="color:#aaa;font-weight:bold;">下書き</span>
+                        <% end %>
+                        ・
+                        <% if pas.sales_type == 0 then %>
+                            無料
+                        <% elsif pas.sales_type == 1 then  %>
+                            有料 （価格:<%= pas.price.to_s(:delimited) %>円 アフィリエイト報酬率: <%= pas.afe %>%）
+                        <% end %>
+                    </p>
+                    <p style="font-size:0.8em;color:#aaa;">
+                        作成日:<%= pas.created_at.strftime("%Y年%m月%d日") %>
+                        編集日:<%= pas.updated_at.strftime("%Y年%m月%d日") %>
+                    </p>
+
+                </a>
+                <span style="font-size:0.8em;color:#aaa;">タグ: </span>
+                <% pas.post_tag_relations.each do |a| %>
+                    <a href="/tag/<%= a.tag.tag_key %>" target="_blank" style="font-size:0.8em;color:#aaa;margin:0 3px;">#<%= a.tag.name %></a>
+                <% end %>
+                <span style="font-size:0.8em;color:#aaa;"><br />カテゴリー: </span>
+                <% pas.post_category_relations.each do |a| %>
+                    <a href="/tag/<%= a.category.cate_key %>" target="_blank" style="font-size:0.8em;color:#aaa;margin:0 3px;">#<%= a.category.name %></a>
+                <% end %>
+            </div>
+            <div class="right">
+                <div>
+                    <a href="/article/<%= pas.key %>/edit">編集</a>
+                    <%= link_to '削除', "/article/#{pas.id}", method: :delete %>
+                </div>
+                <div>
+                    <a href="/article/<%= pas.key %>/token" class="jqw">トークン生成</a>
+                </div>
+                <% if !pas.index && pas.article_status == "publish" then %>
+                <div>
+
+                    <a href="/article_index/new?key=<%= pas.key %>" class="jqw">indexを申請する</a>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+    <%= paginate @infArticles %>
+</div>

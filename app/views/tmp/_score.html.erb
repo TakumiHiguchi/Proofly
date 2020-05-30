@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+    <div class="scoreContainer">
+        <h2>Proofly Score</h2>
+        <p class="score"><%= @score.score %></p>
+        <i class="fa fa-question-circle-o" aria-hidden="true"></i> <a href="#">Proofly Scoreについて</a>
+    </div>
+<% end %>

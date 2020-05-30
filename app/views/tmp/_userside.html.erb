@@ -1,0 +1,52 @@
+<%= stylesheet_link_tag "userside", :media => "all" %>
+<% if user_signed_in? %>
+    <aside class="sub_flame">
+        <div class="prof">
+            <div class="proft">
+                <a class="userimg" href="/nuser/<%= @settings[1] %>">
+                    <% if @settings[4].length > 0 then %>
+                        <%= image_tag @settings[4].to_s %>
+                    <% else %>
+                        <%= image_tag "noImage.png" %>
+                    <% end %>
+                </a>
+                <a class="fasa" href="/nuser/<%= @settings[1] %>/edit"><i class="fas fa-user-cog"></i></a>
+            </div>
+            <a class="profm" href="/nuser/<%= @settings[1] %>">
+                <p><%= @settings[0] %></p>
+                <p style="color:#999;">@<%= @settings[1] %></p>
+            </a>
+            <ul class="ls">
+                <li><a href="/nuser/<%= @settings[1] %>"><i class="fas fa-home" ></i>マイページ</a></li>
+                <li><a href="/work"><i class="fas fa-book-open"></i>作品の管理</a></li>
+                <li><a href="/work/purchased"><i class="fas fa-book-reader"></i>購入済み作品</a></li>
+                <%#　<li><a href="#"><i class="fas fa-book-open"></i>閲覧履歴</a></li> %>
+                <li><a href="#"><i class="fas fa-signal"></i>アナリティクス</a></li>
+            </ul>
+            <ul class="ls">
+                <li><a href="/settings"><i class="fas fa-cog"></i>プライバシーと設定</a></li>
+                <%# <li><a href="#"><i class="fas fa-th-large"></i>トークンの管理</a></li> %>
+                <%# <li><a href="#"><i class="fas fa-hand-holding-heart"></i>Prの管理</a></li> %>
+                <%# <li><a href="#"><i class="fab fa-ethereum"></i>Ethereumアドレスの発行</a></li> %>
+                <% if @settings[5]=="admin" %>
+                    <li><a href="/management"><i class="fas fa-cog"></i>管理画面</a></li>
+                <% end %>
+            </ul>
+            <ul>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,style: "padding-left:31px;" %></li>
+            </ul>
+        </div>
+    </aside>
+<% else %>
+     <!--
+    <aside class="sub_flame">
+        <div class="nolog">
+            <p style="font-size:1.1em;font-weight:bold;margin-bottom:10px;">Prooflyを使ってみませんか？</p>
+            <p>今すぐ登録してタイムラインをカスタマイズしたり、作品を投稿してみたりしましょう。</p>
+            <p style="margin-bottom:10px;">登録は最短10秒で完了します。</p>
+            <div><a href="/users/sign_up" class="linkc">Prooflyを始める</a></div>
+        </div>
+    </aside>
+    -->
+<% end %>
+

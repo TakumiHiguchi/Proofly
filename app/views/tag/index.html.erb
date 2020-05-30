@@ -1,0 +1,67 @@
+<%# タイトル等設定 %>
+<% provide(:title,"人気タグ | Proofly") %>
+<% provide(:index,"noindex") %>
+<%#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------%>
+<%= render 'tmp/header',{ s: "tag" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div>
+            <div class="main_container_n">
+                <% ua = request.env["HTTP_USER_AGENT"]
+                if(!ua.include?('Mobile')&& !ua.include?('Android')) then %>
+                    <div class="tnav">
+                            <nav>
+                                <ul>
+                                    <li class="<% if params[:type].nil? %>current<% else %>des<% end %>"><a href="/tag">人気</a></li>
+                                    <li class="<% if params[:type]=="soaring" %>current<% else %>des<% end %>"><a href="/tag?type=soaring">トレンド</a></li>
+                                </ul>
+                            </nav>
+                    </div>
+                <% end %>
+                <h1 class="tagH1">タグ一覧</h1>
+                <div class="">
+                	<div class="jscroll article-list">
+                		<% count=0 %>
+						<% @tagData.each do |pas| %>
+							<% count+=1 %>
+							<a class="tagList" href="/tag/<%= pas.tag_key %>">
+								<div class="tagn">
+									<% if params[:page].to_i == 0 %>
+										<%= (params[:page].to_i*30+count).to_s %>.<% if params[:type]=="new" %>新着<% elsif params[:type]=="soaring" %>トレンド<% else %>人気<% end %>
+									<%	else %>
+										<%= ((params[:page].to_i - 1)*30+count).to_s %>.<% if params[:type]=="new" %>新着<% elsif params[:type]=="soaring" %>トレンド<% else %>人気<% end %>
+									<% end %>
+								</div>
+								<div class="tagHeadline">#<%=pas.name %></div>
+								<div class="tagcou"><%=pas.tag_count %>件の投稿</div>
+							</a>
+
+
+						<% end %>
+						<%= paginate @tagData %>
+					</div>
+				</div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <%= render 'tmp/ad/google/sidetop' %>
+            <%= render 'tmp/userside' %>
+            <%# render 'tmp/side/newIndexListSide' %>
+        </div>
+    </div>
+</main>
+<%= render 'tmp/footer' %>
+
+<script>
+$(window).on('scroll', function() {
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    if ( (scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+          $('.jscroll').jscroll({
+            contentSelector: '.article-list',
+            nextSelector: 'span.next:last a'
+          });
+    }
+});
+</script>
+

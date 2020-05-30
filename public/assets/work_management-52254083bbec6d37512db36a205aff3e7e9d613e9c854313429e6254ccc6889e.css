@@ -1,0 +1,187 @@
+@charset "UTF-8";
+/* line 1, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+}
+/* line 5, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container .left {
+  width: calc(100% - 148px);
+  padding: 10px;
+}
+/* line 8, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container .left a.ind {
+  text-decoration: none;
+}
+/* line 12, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container .left .ats {
+  padding: 0 0 10px 0;
+}
+/* line 14, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container .left .ats:hover {
+  text-decoration: underline;
+}
+/* line 19, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container .right {
+  width: 148px;
+  padding: 10px;
+}
+/* line 22, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container .right div {
+  display: flex;
+  margin-bottom: 10px;
+}
+/* line 25, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container .right div a.jqw {
+  width: auto;
+}
+/* line 28, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container .right div a {
+  display: block;
+  width: 30px;
+  height: 1.5em;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 5px 20px 3px 20px;
+  margin: 0px 2px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.8em;
+}
+/* line 39, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+.work_container .right div a:hover {
+  border: 1px dotted #aaa;
+}
+
+/* line 52, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_list_mane.scss */
+nav.pagination {
+  display: none;
+}
+
+/* line 3, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  color: #494949;
+}
+
+/* line 13, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+html, body {
+  background: #f8f8f8;
+}
+
+/* line 16, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tofx {
+  width: 100%;
+}
+/* line 18, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tofx .timghe {
+  width: 100%;
+}
+/* line 20, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tofx .timghe img {
+  display: block;
+  width: 100%;
+}
+/* line 25, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tofx .fxse {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* line 29, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tofx .fxse .sdwe {
+  width: 1000px;
+  min-width: 1000px;
+  margin: 10px 0 0 0;
+}
+/* line 33, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tofx .fxse .sdwe .topic {
+  margin-bottom: 10px;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: #f8f8f8;
+}
+/* line 40, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tofx .fxse .sdwe .topic .main_flame {
+  width: calc(1000px - 310px);
+  margin-right: 10px;
+  background: white;
+  padding: 20px 0;
+  border-radius: 10px;
+}
+/* line 46, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tofx .fxse .sdwe .topic .main_flame .tmai {
+  width: calc(100% - 40px);
+  padding: 0 20px;
+}
+/* line 49, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tofx .fxse .sdwe .topic .main_flame .tmai img {
+  width: 100%;
+}
+
+/* line 58, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 20px);
+  margin: 0 0 15px 0;
+  padding: 0 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+/* line 66, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tnav nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  text-align: center;
+}
+/* line 73, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tnav nav li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  min-width: 70px;
+}
+/* line 80, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tnav nav a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #555;
+  padding-bottom: 5px;
+  font-size: 0.8em;
+}
+/* line 88, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tnav nav li.current {
+  border-bottom: 3px solid #00aced;
+}
+/* line 91, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tnav nav li.des {
+  border-bottom: 3px solid #ffffff;
+}
+/* line 94, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tnav nav li:hover {
+  color: #E7DA66;
+  border-bottom: 3px solid #00aced;
+}
+/* line 98, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+.tnav nav li a {
+  cursor: pointer;
+}
+
+/* line 102, /Users/higuchitakumi/smapr/app/assets/stylesheets/work_management.scss */
+nav.pagination {
+  display: none;
+}

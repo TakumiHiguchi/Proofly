@@ -1,0 +1,51 @@
+<%= render 'tmp/header',{ s: "" } %>
+<main class="tofx">
+    <div class="fxse">
+        <div class="sdwe">
+            
+            <div class="topic">
+                <div class="main_flame">
+                    <div class="tmai ethe_token_redirect">
+                        <% if @create_result %>
+                            <h2>トークンの生成に成功しました。</h2>
+                            <div style="margin:20px 0;">
+                                <div class="t-token"><div class="t-token-left">workhash（SHA3 512）</div><div class="t-token-right"><%= Digest::SHA3.hexdigest(strip_tags(@content).to_s, 512) %></div></div>
+                                <div class="t-token"><div class="t-token-left">type</div><div class="t-token-right">0（article）</div></div>
+                                <div class="t-token"><div class="t-token-left">status</div><div class="t-token-right">1</div></div>
+                                <div class="t-token"><div class="t-token-left">author</div><div class="t-token-right"><%= @settings[1] %></div></div>
+                                <div class="t-token"><div class="t-token-left">publishingtime</div><div class="t-token-right"><%= @token_timestamp %></div></div>
+                                
+                            </div>
+                            <p>以上の内容でトークンを生成を受け付けました。トークンの生成には、Prooflyによる確認作業とトランザクションの承認時間を合わせて、<span class="f-re">30分〜2時間程度</span>のお時間をいただいております。</p>
+                        <% else %>
+                            <h2>トークンの生成に失敗しました。</h2>
+                            <div style="margin:20px 0;">
+                                <h3 class="itokens">エラー</h3>
+                                <% if @Error.include?("This work already exists") %>
+                                    <p>この作品はすでにトークン化されているため、トークンを生成できません。</p>
+                                    <p><%= @Error %></p>
+                                <% elsif @Error.include?("This type is not defined") %>
+                                    <p><%= @Error %></p>
+                                <% elsif @Error.include?("You have not accepted the terms") %>
+                                    <p>規約に同意されていません。<a href="/article/<%= params[:id] %>/token">前の画面</a>に戻って、規約に同意してから再度お試しください。</p>
+                                    <p><%= @Error %></p>
+                                <% end %>
+                            </div>
+                            <div style="margin:20px 0;">
+                                <h3 class="itokens">トークン生成に使用された情報</h3>
+                                <div class="t-token"><div class="t-token-left">workhash（SHA3 512）</div><div class="t-token-right"><%=Digest::SHA3.hexdigest(strip_tags(@content).to_s, 512) %></div></div>
+                                <div class="t-token"><div class="t-token-left">type</div><div class="t-token-right">0（article）</div></div>
+                                <div class="t-token"><div class="t-token-left">status</div><div class="t-token-right">1</div></div>
+                                <div class="t-token"><div class="t-token-left">author</div><div class="t-token-right"><%= @settings[1] %></div></div>
+                                <div class="t-token"><div class="t-token-left">publishingtime</div><div class="t-token-right">blocktimestamp</div></div>
+                                
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+                <%= render 'tmp/userside' %>
+            </div>
+        </div>
+    </div>
+</main>
+<%= render 'tmp/footer' %>

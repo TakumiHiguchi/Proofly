@@ -1,0 +1,62 @@
+<%# タイトル等設定 %>
+<% provide(:title,"Proofly") %>
+
+
+<%#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------%>
+<%= render 'tmp/header',{ s: "home" } %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div>
+            <div class="main_container_n">
+                <% ua = request.env["HTTP_USER_AGENT"]
+                if(ua.include?('Mobile')|| ua.include?('Android')) then %>
+                    <%= form_tag("/serach",:method => 'get') do %>
+                        <div class="iiHrap">
+                            <div class="InputlineHome">
+                                <i class="fas fa-search"></i>
+                                <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "キーワードやタグ名で検索"} %>
+                            </div>
+                        </div>
+                    <% end %>
+                <% else %>
+                    <div class="tnav">
+                        <nav>
+                            <ul>
+                                <li class="current"><a>おすすめ</a></li>
+                            </ul>
+                        </nav>
+                        
+                    </div>
+                <% end %>
+                <% if !user_signed_in? %>
+                    <%= render 'tmp/toppage/prooflyReco' %>
+                    <%= render 'tmp/toppage/otherReco' %>
+                <% else %>
+
+                    <%= render 'tmp/toppage/RecoForYou' %>
+                    <%= render 'tmp/toppage/prooflyReco' %>
+                    <%= render 'tmp/toppage/otherReco' %>
+                <% end %>
+            </div>
+        </div>
+        <div>
+            <%= render 'tmp/userside' %>
+            <%= render 'tmp/score' %>
+            <%= render 'tmp/side/hottagList' %>
+        </div>
+    </div>
+</main>
+
+
+
+
+<script>
+          $('.jscroll').jscroll({
+            contentSelector: '.skill-list',
+            nextSelector: 'span.next:last a',
+            autoTrigger: true,
+            padding: 2500
+          });
+
+
+</script>

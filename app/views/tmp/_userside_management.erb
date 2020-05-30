@@ -1,0 +1,30 @@
+<%= stylesheet_link_tag "userside", :media => "all" %>
+<% if user_signed_in? %>
+    <aside class="sub_flame">
+        <div class="prof">
+            <div class="proft">
+                <a class="userimg" href="/nuser/<%= @settings[1] %>"><%= image_tag @settings[4].to_s %></a>
+                <a class="fasa" href="/nuser/<%= @settings[1] %>/edit"><i class="fas fa-user-cog"></i></a>
+            </div>
+            <a class="profm" href="/nuser/<%= @settings[1] %>">
+                <p><%= @settings[0] %></p>
+                <p style="color:#999;">@<%= @settings[1] %></p>
+            </a>
+            <ul class="ls">
+                <% if @settings[5]=="admin" %>
+                    <li><a href="/management"><i class="fas fa-cog"></i>トップ</a></li>
+                    <li><a href="/article_management"><i class="fas fa-cog"></i>記事の管理</a></li>
+                    <li><a href="/article_index"><i class="fas fa-cog"></i>index申請の管理</a></li>
+                    <li><a href="management"><i class="fas fa-cog"></i>カテゴリーの管理</a></li>
+                    <li><a href="management"><i class="fas fa-cog"></i>タグの管理</a></li>
+                    <li><a href="/fixed_page"><i class="fas fa-cog"></i>固定ページの管理</a></li>
+                    <li><a href="management"><i class="fas fa-cog"></i>トップ</a></li>
+                <% end %>
+            </ul>
+            <ul>
+                <li><a href="/"><i class="fas fa-home"></i>トップページに戻る</a></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,style: "padding-left:31px;" %></li>
+            </ul>
+        </div>
+    </aside>
+<% end %>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title><%= full_title(yield(:title)) %></title>
+    <meta name="description" content="<%= full_description(yield(:description)) %>">
+    
+    <%# index %>
+    <% if yield(:index)=="noindex" then%>
+        <meta name="robots" content="noindex">
+    <% end %>
+    
+    <%= csrf_meta_tags %>
+
+
+    <%# controllerごとcss割り当て
+        新しくコントローラーを追加してscssを新しく追加したら必ず「rake assets:precompile RAILS_ENV=production」でプリコンパイルする
+    %>
+    <%= stylesheet_link_tag params[:controller] if Rails.application.assets_manifest.assets["#{params[:controller]}.css"] %>
+
+    <!-- fontawesome include -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%# kaminari seo %>
+    <%= rel_next_prev_link_tags @infArticles if @infArticles %>
+  
+    <!-- googlead -->
+    <script data-ad-client="ca-pub-3071406439328000" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+
+  <body>
+    
+    <% if notice %>
+        <div class="ove"><p class="notice"><%= notice %></p></div>
+    <% elsif alert %>
+        <div class="ove"><p class="alert"><%= alert %></p></div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

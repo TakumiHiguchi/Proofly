@@ -1,0 +1,63 @@
+<%= stylesheet_link_tag "header", :media => "all" %>
+<header class="main_header">
+    <div class="topwer">
+        <%= link_to "/", class: "top_icon" do -%>
+            <%= image_tag "proofly.png" %>
+        <% end -%>
+        <div>
+            <% ua = request.env["HTTP_USER_AGENT"]
+            if(ua.include?('Mobile')|| ua.include?('Android')) then %>
+                <% if s != "home" %>
+                    <%= form_tag("/serach",:method => 'get') do %>
+                        <div class="Inputline">
+                            <i class="fas fa-search"></i>
+                            <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "キーワードやタグ名で検索"} %>
+                      </div>
+                    <% end %>
+                <% end %>
+            <% else %>
+                <%= form_tag("/serach",:method => 'get') do %>
+                    <div class="Inputline">
+                        <i class="fas fa-search"></i>
+                        <%= text_field_tag :query,"#{params[:query]}",{class:"searchInput",placeholder: "キーワードやタグ名で検索"} %>
+                  </div>
+                <% end %>
+            <% end %>
+            
+            <% if user_signed_in? %>
+                <a class="userimg" href="/nuser/<%= @settings[1] %>">
+                    <% if @settings[4].length > 0 then %>
+                        <%= image_tag @settings[4].to_s %>
+                    <% else %>
+                        <%= image_tag "noImage.png" %>
+                    <% end %>
+                </a>
+            <% end %>
+            <% if s != "nt" then%>
+                <% ua = request.env["HTTP_USER_AGENT"]
+                if(ua.include?('Mobile')|| ua.include?('Android')) then %>
+                <% else %>
+                    <% if user_signed_in? %>
+                        <a href="/article/new" class="linkc">投稿する</a>
+                    <% end %>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+    <% if s == "" || s == "nt" then%>
+    <% else %>
+            <div class="tnav">
+                <nav>
+                    <ul>
+                        <li <% if s == "home" %>class="current"<% else %>class="des"<% end %> ><a <% if s != "home" %>href="/" <% end %> >Home</a></li>
+                        <!-- <li <% if s == "trade" %>class="current"<% else %>class="des"<% end %>><a <% if s != "trade" %>href="/" <% end %>>取引所</a></li> -->
+                        <li <% if s == "category" %>class="current"<% else %>class="des"<% end %>><a <% if s != "cate" %>href="/category" <% end %>>カテゴリ</a></li>
+                        <li <% if s == "tag" %>class="current"<% else %>class="des"<% end %>><a <% if s != "tag" %>href="/tag" <% end %>>人気タグ</a></li>
+                        <!-- <li <% if s == "story" %>class="current"<% else %>class="des"<% end %>><a <% if s != "story" %>href="/" <% end %>>ストーリー</a></li> -->
+                        <!-- <li <% if s == "token" %>class="current"<% else %>class="des"<% end %>><a <% if s != "token" %>href="/" <% end %>>トークン</a></li> -->
+                    </ul>
+                </nav>
+                
+            </div>
+    <% end %>
+</header>

@@ -1,0 +1,78 @@
+<%= stylesheet_link_tag "userside", :media => "all" %>
+<aside class="sub_flame" style="padding:12px 0;">
+	<div class="headline">次の記事</div>
+	<% @nextArticles.each do |pas| %>
+	    <a href="/nuser/<%= @userDetail.user_key %>/article/<%= pas.key %>" class="artb1">
+	        <div class="left">
+	            <% if pas.thum then %>
+	            	<% if Rails.env.production? %>
+		            	<%
+	                      s3 = Aws::S3::Resource.new(
+	                        region: ENV['S3_REGION'],
+	                        credentials: Aws::Credentials.new(
+	                          ENV['S3_ACCESS_KEY'],
+	                          ENV['S3_SECRET_KEY']
+	                        )
+	                      )
+	                      signer = Aws::S3::Presigner.new(client: s3.client)
+	                      pass = "uploads/article/thum/#{pas.thum.to_s}"
+	                      presigned_url = signer.presigned_url(:get_object,bucket: ENV['S3_BUCKET'], key: pass, expires_in: 60)
+	                  %>
+
+                  	<%= image_tag presigned_url, class: '' , alt: "#{pas.title}のサムネイル"%>
+                  <% end %>
+	          <% else %>
+	              <div class="andj">no image</div>
+	          <% end %>
+	        </div>
+	        <div class="right">
+	            <h3 class="toptitle"><%= pas.title.byteslice(0, 52).scrub('') %><% if pas.title.bytesize > 50 %>...<%end%></h3>
+	            <div class="dest"><%= pas.name %></div>
+	            <div class="dest"><%= pas.created_at.strftime("%Y年%m月%d日に公開") %></div>
+	        </div>
+	    </a>
+    <% end %>
+</aside>
+<aside class="sub_flame" style="padding:12px 0;">
+	<% @recommend.each do |pas| %>
+		<a href="/tag/<%= pas[1] %>" class="sideRecoHeadline">
+			<div class="sRH">#<%= pas[0] %></div>
+			<%= image_tag @articleData.thum.to_s, class: 'imageContainer' %>
+		</a>
+		<% pas[3].each do |pass| %>
+			<a href="/nuser/<%= pass.user_key %>/article/<%= pass.key %>" class="artb1">
+				<div class="left">
+		            <% if pass.thum then %>
+		            	<% if Rails.env.production? %>
+			            	<%
+		                      s3 = Aws::S3::Resource.new(
+		                        region: ENV['S3_REGION'],
+		                        credentials: Aws::Credentials.new(
+		                          ENV['S3_ACCESS_KEY'],
+		                          ENV['S3_SECRET_KEY']
+		                        )
+		                      )
+		                      signer = Aws::S3::Presigner.new(client: s3.client)
+		                      passw = "uploads/article/thum/#{pass.thum.to_s}"
+		                      presigned_url = signer.presigned_url(:get_object,bucket: ENV['S3_BUCKET'], key: passw, expires_in: 60)
+		                  %>
+
+	                  	<%= image_tag presigned_url, class: '' , alt: "#{pass.title}のサムネイル"%>
+	                  <% end %>
+		          <% else %>
+		              <div class="andj">no image</div>
+		          <% end %>
+		        </div>
+		        <div class="right">
+		            <h3 class="toptitle"><%= pass.title.byteslice(0, 52).scrub('') %><% if pass.title.bytesize > 50 %>...<%end%></h3>
+		            <div class="dest"><%= pass.name %></div>
+		            <div class="dest"><%= pass.created_at.strftime("%Y年%m月%d日に公開") %></div>
+		        </div>
+			</a>
+		<% end %>
+
+	<% end %>
+	<a class="nextbtn sidtagbtn" href="/tag">
+		他のタグを見る
+	</a>
+</aside>

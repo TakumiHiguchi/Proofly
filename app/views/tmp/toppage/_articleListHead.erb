@@ -1,0 +1,24 @@
+<a href="/nuser/<%= article.user_key %>/article/<%= article.key %>" class="enje">
+    <% if Rails.env.production? %>
+        <%
+            s3 = Aws::S3::Resource.new(
+              region: ENV['S3_REGION'],
+              credentials: Aws::Credentials.new(
+                ENV['S3_ACCESS_KEY'],
+                ENV['S3_SECRET_KEY']
+              )
+            )
+            signer = Aws::S3::Presigner.new(client: s3.client)
+            pass = "uploads/article/thum/#{article.thum.to_s}"
+            presigned_url = signer.presigned_url(:get_object,bucket: ENV['S3_BUCKET'], key: pass, expires_in: 60)
+        %>
+        <%= image_tag presigned_url, class: '' , alt: "#{article.title}のサムネイル"%>
+    <% end %>
+    <h3 class="nosinh03"><%= article.title %></h3>
+    <p style="margin:5px 0;" class="hedlineDes"><%=strip_tags article.description.gsub(/\r\n|\r|\n|\s|\t/, "") %></p>
+    <p style="color:#aaa;font-size:0.8em;"><%= article.name %> (@<%= article.user_key %>)</p>
+    <% ua = request.env["HTTP_USER_AGENT"]
+    if(!ua.include?('Mobile')&& !ua.include?('Android')) then %>
+        <p style="color:#aaa;font-size:0.8em;"><%= article.created_at.strftime("%Y年%m月%d日") %></p>
+    <% end %>
+</a>

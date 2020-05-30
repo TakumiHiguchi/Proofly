@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag "devise", :media => "all" %>
+<main class="hello">
+    <div class="her">
+        <div class="f-section">
+            <div class="her-left">
+                <p>あなたの作品を本当の意味であなたが所有する時代がやってくる。</p>
+                <p>さあ、新しい時代に飛び立とう。</p>
+            </div>
+            <div class="her-right">
+                <h2><%= image_tag "proofly.png" %></h2>
+                <p class="clx">今すぐ登録して、自分の作品を販売したり作品を購入したりしてみましょう。</p>
+                <a class="linkBox hrm" href="">Ethereumアドレスで登録</a>
+                <p class="ghi hrm"><span>または</span></p>
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                    <div class="devisere">
+                        <%= render "devise/shared/error_messages", resource: resource %>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email",:placeholder => "メールアドレス" %>
+                        <%= f.password_field :password, autocomplete: "new-password" ,:placeholder => "パスワード（#{@minimum_password_length}文字以上）"%>
+                        <%= f.password_field :password_confirmation, autocomplete: "new-password" ,:placeholder => "パスワード（確認）"%>
+                    </div>
+                    <div class="rOP deviseac hrm">
+                        <%= f.submit "登録する" %>
+                    </div>
+                    <% end %>
+                    <p class="cls">登録することにより、Proofly利用規約、ProofCoreの利用規約、Cookieポリシー、データーに関するポリシーに同意したものとみなされます。</p>
+                    <p class="alg">アカウントをお持ちですか？<a href="/users/sign_in">ログインする</a></p>
+                </div>
+            </div>
+        </div>
+        <a class="nextarrow fuwa_box" href="#aks">
+            <div class="arrow"></div>
+        </a>
+    </div>
+    <section class="howtp">
+        a
+    </sction>
+</main>
+

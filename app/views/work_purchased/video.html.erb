@@ -1,0 +1,29 @@
+<%= render 'tmp/header',{ s: "" } %>
+<main class="tofx">
+    <div class="fxse">
+        <div class="sdwe">
+            
+            <div class="topic">
+                <div class="main_flame">
+                    <div class="tnav">
+                        <nav>
+                            <ul>
+                                <li class="des"><a href="/work/purchased">記事</a></li>
+                                <li class="des"><a href="/book/purchased" >本</a></li>
+                                <li class="des"><a href="/image/purchased" >画像</a></li>
+                                <li class="current"><a href="/video/purchased" >動画</a></li>
+                                <li class="des"><a href="/story/purchased" >ストーリー</a></li>
+                            </ul>
+                        </nav>
+                        
+                    </div>
+                    <div class="tmai">
+                        <img "alt="coming soon" src="<%= $url_at %>/proofly/cmg.jpeg" />
+                        
+                    </div>
+                </div>
+                <%= render 'tmp/userside' %>
+            </div>
+        </div>
+    </div>
+</main>

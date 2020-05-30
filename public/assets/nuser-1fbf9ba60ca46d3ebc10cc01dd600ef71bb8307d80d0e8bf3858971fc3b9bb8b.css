@@ -1,0 +1,270 @@
+@charset "UTF-8";
+/* line 4, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+  color: #494949;
+}
+
+/* line 14, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+html, body {
+  height: 100%;
+  background: #f8f8f8;
+}
+
+/* line 18, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx {
+  width: 100%;
+  height: 100%;
+}
+/* line 21, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .timghe {
+  width: 100%;
+}
+/* line 23, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .timghe img {
+  display: block;
+  width: 100%;
+}
+/* line 28, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .wdet {
+  display: flex;
+  justify-content: center;
+  background: white;
+}
+/* line 32, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .wdet .erf {
+  width: 1000px;
+  padding: 20px 0;
+}
+/* line 35, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .wdet .erf .inhgf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* line 40, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .wdet .erf .inhgf .icesob {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 170px);
+  padding-right: 20px;
+}
+/* line 45, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .wdet .erf .inhgf .icesob .userimg {
+  width: 84px;
+  height: 84px;
+}
+/* line 48, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .wdet .erf .inhgf .icesob .userimg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* line 55, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .wdet .erf .inhgf .icesob .weweq {
+  width: calc(100% - 114px);
+  padding-left: 30px;
+}
+/* line 58, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .wdet .erf .inhgf .icesob .weweq h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+/* line 65, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .wdet .erf .qwed {
+  width: calc(100% - 114px);
+  padding-left: 114px;
+}
+/* line 71, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+/* line 76, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe {
+  width: 1000px;
+  min-width: 1000px;
+  margin: 10px 0 0 0;
+}
+/* line 80, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic {
+  margin-bottom: 10px;
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: #f8f8f8;
+}
+/* line 87, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .main_flame {
+  width: calc(1000px - 310px);
+  margin-right: 10px;
+  background: white;
+  padding: 20px 0;
+  border-radius: 10px;
+}
+/* line 93, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .main_flame .tmai {
+  width: calc(100% - 40px);
+  padding: 0 20px;
+}
+/* line 96, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .main_flame .tmai img {
+  width: 100%;
+}
+/* line 101, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame {
+  width: 300px;
+  background: white;
+  padding: 20px 0 2px 0;
+  border-radius: 10px;
+}
+/* line 106, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof {
+  width: calc(100% - 30px);
+  padding: 0 15px;
+}
+/* line 109, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof .proft {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+/* line 114, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof .proft .userimg {
+  width: 44px;
+  height: 44px;
+}
+/* line 117, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof .proft .userimg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* line 125, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof .proft .fasa .fas {
+  font-size: 28px;
+  color: #00aced;
+}
+/* line 131, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof .profm {
+  display: block;
+  text-decoration: none;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+/* line 136, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof .profm:hover {
+  text-decoration: underline;
+}
+/* line 140, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof ul.ls {
+  border-bottom: 1px solid #f0f0f0;
+}
+/* line 143, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof ul {
+  list-style-type: none;
+}
+/* line 145, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof ul li {
+  width: 100%;
+}
+/* line 147, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 8px 0;
+}
+/* line 151, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof ul li a:hover {
+  text-decoration: underline;
+}
+/* line 154, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tofx .fxse .sdwe .topic .sub_flame .prof ul li a i.fas, .tofx .fxse .sdwe .topic .sub_flame .prof ul li a i.fab {
+  text-align: center;
+  width: 16px;
+  color: #00aced;
+  padding-right: 15px;
+}
+
+/* line 170, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.linkBox {
+  display: block;
+  background: #00aced;
+  border-radius: 250px;
+  color: white;
+  width: 90px;
+  padding: 5px 20px 3px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* line 180, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+a.dc {
+  margin-right: 20px;
+}
+
+/* line 184, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 20px);
+  margin: 0 0 15px 0;
+  padding: 0 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+/* line 192, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tnav nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  width: 80%;
+  text-align: center;
+}
+/* line 199, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tnav nav li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  min-width: 70px;
+}
+/* line 206, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tnav nav a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #555;
+  padding-bottom: 5px;
+  font-size: 0.8em;
+}
+/* line 214, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tnav nav li.current {
+  border-bottom: 3px solid #00aced;
+}
+/* line 217, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tnav nav li.des {
+  border-bottom: 3px solid #ffffff;
+}
+/* line 220, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tnav nav li:hover {
+  color: #E7DA66;
+  border-bottom: 3px solid #00aced;
+}
+/* line 224, /Users/higuchitakumi/smapr/app/assets/stylesheets/nuser.scss */
+.tnav nav li a {
+  cursor: pointer;
+}

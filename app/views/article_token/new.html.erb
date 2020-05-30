@@ -1,0 +1,56 @@
+<%= render 'tmp/header',{ s: "" } %>
+<main class="tofx">
+    <div class="fxse">
+        <div class="sdwe">
+            
+            <div class="topic">
+                <div class="main_flame">
+                    <div class="tmai">
+                        <h2 class="ltokens">トークンの生成</h2>
+                        <p class="ltokens">ここではあなたの作品のトークンを生成することができます。トークンを生成すると自動的にブロックチェーン上にあなたの作品が記録され、トークンを転出することで誰にも改ざんされることなくあなたの作品の著作権を証明することができます。</p>
+                        <p class="ltokens">また、取引所でトークンを販売することで利益を得ることもできます。</p>
+                        <p class="ltokens">詳しくは、<a href="">ヘルプ：ブロックチェーンとは</a>や、<a href="">ヘルプ：トークンって何？</a>、<a href="">ヘルプ：トークンの生成方法は？</a>をご覧ください。</p>
+                        <div style="margin:20px 0;">
+                            <h3 class="itokens">トークンに記される内容</h3>
+                            <div class="t-token"><div class="t-token-left">workhash（SHA3 512）</div><div class="t-token-right"><%=Digest::SHA3.hexdigest(strip_tags(@content).to_s, 512) %></div></div>
+                            <div class="t-token"><div class="t-token-left">type</div><div class="t-token-right">0（article）</div></div>
+                            <div class="t-token"><div class="t-token-left">status</div><div class="t-token-right">1</div></div>
+                            <div class="t-token"><div class="t-token-left">author</div><div class="t-token-right"><%= @settings[1] %></div></div>
+                            <div class="t-token"><div class="t-token-left">publishingtime</div><div class="t-token-right">blocktimestamp</div></div>
+                            
+                        </div>
+                        <p class="ltokens">以上の内容でトークンを生成します。<span class="f_re">トークンの生成には、手数料として1件あたり100円かかります。</span>この手数料の一部はEthereumネットワークの継続的な運営のためにEthereumマイナーに支払われます。</p>
+                        <div style="margin:20px 0;">
+                            <h3 class="itokens">workhashの生成に使用されている文章の確認</h3>
+                            <div class="fd_con_b">
+                                <%= strip_tags(@content) %>
+                            </div>
+                        </div>
+                        
+                        <div style="margin:20px 0;">
+                            <h3 class="itokens">トークン生成の注意点</h3>
+                            <ul style="margin-left:20px;">
+                                <li><p>トークン生成申請後、記事の編集と記事の非公開ができなくなります。</p></li>
+                                <li><p>トークン生成後、statusは変更可能ですが、変更には再度手数料がかかります。</p></li>
+                                <li><p>トークン生成後、トークンを削除することは可能ですが、削除には手数料がかかります。</p></li>
+                            </ul>
+                        </div>
+                        <%= form_with url: "/article/#{params[:id]}/token/create" , local: true do |form| %>
+                          <div class="checks">
+                              <label for="cons">
+                                  <div class="checkbox_cons">
+                                      <%= form.check_box :checkbox, id: :cons,:as => :boolean %>
+                                      <p>以上の内容の確認し、ProofCoreの利用規約及び、トークン生成・管理・削除に関するポリシー、ProofCore開発ポリシーを確認し、同意します。</p>
+                                  </div>
+                              </label>
+                          </div>
+                          <%= form.submit "トークンを作成する"%>
+                        <% end %>
+                    </div>
+                </div>
+                <%= render 'tmp/userside' %>
+            </div>
+        </div>
+    </div>
+</main>
+<%= render 'tmp/footer' %>

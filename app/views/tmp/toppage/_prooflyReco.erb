@@ -1,0 +1,15 @@
+<div class="main_flame_inner" style="border-bottom:1px solid #f0f0f0;margin-bottom:15px">
+    <h2 class="nosinh2">Prooflyのおすすめ</h2>
+    <% c=0 %>
+    <div class="">
+        <% @prooflyRecommended.each do |pas| %>
+            <% if c==0 %>
+                <%= render 'tmp/toppage/articleListHead',{ article: pas } %>
+            <% else %>
+                <%= render 'tmp/toppage/articleList',{ article: pas } %>
+            <% end %>
+            <% c+=1 %>
+        <% end %>
+        <%# paginate @ins %>
+    </div>
+</div>

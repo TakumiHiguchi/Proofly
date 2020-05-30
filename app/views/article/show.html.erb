@@ -1,0 +1,96 @@
+<%# タイトル等設定 %>
+<% provide(:title,@articleData.title) %>
+<% provide(:description,"#{@articleData.description}") %>
+<% if !@articleData.index %>
+    <% provide(:index,"noindex") %>
+<% end %>
+
+<%#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------%>
+<%= render 'tmp/header',{ s: "" } %>
+<main class="main_flame">
+    <div class="main_inner">
+            <div class="article_show">
+                <div class="thum">
+                    <%= image_tag @articleData.thum.to_s, class: '' , alt: "#{@articleData.title}のサムネイル"%>
+                </div>
+                    <h1 class="inpPost-h1"><%= @articleData.title %></h1>
+                    <div class="inpPost-auther_date_box">
+                        <div>
+                            <a href="/nuser/<%= @userDetail.user_key %>">
+                                <% if @userDetail.thum2? then %>
+                                    <%= image_tag @userDetail.thum2.to_s , alt: "#{@userDetail.name}"%>
+                                <% else %>
+                                    <%= image_tag "noImage.png" %>
+                                <% end %>
+                                <%= @userDetail.name %>
+                            </a>
+                            <span>最終更新： <time><%= @articleData.updated_at.strftime("%Y年%m月%d日") %></time></span>
+                        </div>
+                    </div>
+                    <div class="toc_box">
+                            <dl id="index">
+                                <dt>目次</dt>
+                            </dl>
+                    </div>
+                    <div class="main_cont">
+                        
+                            <div class="articleBox pMS">
+                                <% if @userDetail.status=="admin" %>
+                                    <%= @content.html_safe %>
+                                <% else %>
+                                    <%== simple_format(@content).gsub("<br />","") %>
+                                <% end %>
+                            </div>
+                        </div>
+                        <% if @recommend.length > 0 %>
+                            <div class="btm_flame">
+                                    <aside class="box-nex">
+                                        <div class="nexh">最後までお読みいただきありがとうございました</div>
+                                        <div>#<%= @recommend[0][0]%>の関連記事は<%= @firstTagCount %>記事あります。Prooflyに投稿された関連記事を読んでみませんか？</div>
+                                        <a href="/tag/<%= @recommend[0][1]%>">記事を見てみる</a>
+                                    </aside>
+                            </div>
+                        <% end %>
+                        <div class="btm_flame">
+                            <div class="heds">この記事を書いた人</div>
+                            <a href="/nuser/<%= @userDetail.user_key %>" class="autcont">
+                                <div class="left">
+                                    <% if @userDetail.thum2? then %>
+                                        <%= image_tag @userDetail.thum2.to_s , alt: "#{@userDetail.name}"%>
+                                    <% else %>
+                                        <%= image_tag "noImage.png" %>
+                                    <% end %>
+                                </div>
+                                <div class="right">
+                                    <div class="aucn"><%= @userDetail.name %></div>
+                                    <div><%= @userDetail.bio %></div>
+
+                                </div>
+                            </a>
+                     
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <%= render 'tmp/ad/google/sidetop' %>
+                    <%= render 'tmp/side/articleSide' %>
+                </div>
+    </div>
+</main>
+<%= render 'tmp/footer' %>
+<script>
+$(function(){
+  var countId = 0;
+  //目次
+  $(".articleBox h2,.articleBox h3").each(function(){
+                                                           countId++;
+                                                           var ttl = $(this).text();
+                                                           this.id = 'ttl-' + countId;
+                                                           var lv = $(this).prop("tagName");
+                                                           $("#index").append('<dd class="lv_'+lv+'"><a href="#'+this.id+'">'+ttl+'</a></dd>');
+                                                           });
+});
+</script>
+
+
+
+
