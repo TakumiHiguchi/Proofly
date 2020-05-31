@@ -16,7 +16,21 @@ html, body {
   background: #f8f8f8;
 }
 
-/* line 18, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+/* line 16, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+.flex-jus-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* line 21, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+.flex-jus-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 27, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
 .linkContainer {
   background: #00aced;
   border-radius: 500px;
@@ -25,7 +39,7 @@ html, body {
   text-align: center;
 }
 
-/* line 26, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+/* line 35, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
 .tnav {
   display: flex;
   justify-content: space-between;
@@ -35,7 +49,7 @@ html, body {
   padding: 0 10px;
   border-bottom: 1px solid #f0f0f0;
 }
-/* line 34, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+/* line 43, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
 .tnav nav ul {
   display: flex;
   margin: 0;
@@ -43,7 +57,7 @@ html, body {
   width: 80%;
   text-align: center;
 }
-/* line 41, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+/* line 50, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
 .tnav nav li {
   display: flex;
   justify-content: center;
@@ -51,7 +65,7 @@ html, body {
   padding: 5px 10px;
   min-width: 70px;
 }
-/* line 48, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+/* line 57, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
 .tnav nav a {
   display: block;
   width: 100%;
@@ -60,32 +74,32 @@ html, body {
   padding-bottom: 5px;
   font-size: 0.8em;
 }
-/* line 56, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+/* line 65, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
 .tnav nav li.current {
   border-bottom: 3px solid #00aced;
 }
-/* line 59, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+/* line 68, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
 .tnav nav li.des {
   border-bottom: 3px solid #ffffff;
 }
-/* line 62, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+/* line 71, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
 .tnav nav li:hover {
   color: #E7DA66;
   border-bottom: 3px solid #00aced;
 }
-/* line 66, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+/* line 75, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
 .tnav nav li a {
   cursor: pointer;
 }
 
 @media screen and (min-width: 1000px) {
-  /* line 74, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 83, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame {
     width: 100%;
     display: flex;
     justify-content: center;
   }
-  /* line 78, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 87, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame .main_inner {
     display: flex;
     justify-content: center;
@@ -93,7 +107,7 @@ html, body {
     width: 1000px;
     margin: 10px 0 0 0;
   }
-  /* line 84, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 93, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame .main_inner .main_container {
     width: 650px;
     margin-right: 10px;
@@ -102,7 +116,7 @@ html, body {
     background: white;
     border-radius: 10px;
   }
-  /* line 92, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 101, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame .main_inner .main_container_n {
     width: 690px;
     margin-right: 10px;
@@ -111,21 +125,21 @@ html, body {
     background: white;
     border-radius: 10px;
   }
-  /* line 100, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 109, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame .main_inner .main_cont {
     width: 100%;
     margin-bottom: 10px;
     padding: 20px 0;
     background: white;
   }
-  /* line 106, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 115, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame .main_inner .main_container_a {
     width: 740px;
     height: calc(100vh - 70px);
     background: white;
   }
 
-  /* line 113, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 122, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav {
     display: flex;
     justify-content: space-between;
@@ -135,7 +149,7 @@ html, body {
     padding: 0 10px;
     border-bottom: 1px solid #f0f0f0;
   }
-  /* line 121, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 130, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav ul {
     display: flex;
     margin: 0;
@@ -143,7 +157,7 @@ html, body {
     width: 80%;
     text-align: center;
   }
-  /* line 128, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 137, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li {
     display: flex;
     justify-content: center;
@@ -151,7 +165,7 @@ html, body {
     padding: 5px 10px;
     min-width: 70px;
   }
-  /* line 135, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 144, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav a {
     display: block;
     width: 100%;
@@ -160,35 +174,35 @@ html, body {
     padding-bottom: 5px;
     font-size: 0.8em;
   }
-  /* line 143, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 152, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li.current {
     border-bottom: 3px solid #00aced;
   }
-  /* line 146, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 155, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li.des {
     border-bottom: 3px solid #ffffff;
   }
-  /* line 149, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 158, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li:hover {
     color: #E7DA66;
     border-bottom: 3px solid #00aced;
   }
-  /* line 153, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 162, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li a {
     cursor: pointer;
   }
 
-  /* line 158, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 167, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList {
     display: flex;
     padding: 5px 0px;
     text-decoration: none;
   }
-  /* line 161, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 170, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-img {
     width: 30%;
   }
-  /* line 163, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 172, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-img img {
     display: block;
     width: 100%;
@@ -196,37 +210,37 @@ html, body {
     border-radius: 5px;
     object-fit: cover;
   }
-  /* line 171, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 180, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-cont {
     width: calc(70% - 10px);
     padding: 5px 10px 5px 0;
   }
-  /* line 174, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 183, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-cont p {
     margin: 0;
     line-height: 1.8em;
   }
-  /* line 178, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 187, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-cont p.tcdw {
     font-weight: bold;
     font-size: 1.1em;
   }
-  /* line 182, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 191, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-cont p.fouw {
     font-size: 0.9em;
     color: #aaa;
   }
-  /* line 186, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 195, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-cont .title {
     font-weight: bold;
     font-size: 1.2em;
   }
-  /* line 192, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 201, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList:hover title {
     text-decoration: underline;
   }
 
-  /* line 197, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 206, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .Inputline {
     border: 1px solid #f0f0f0;
     border-radius: 5px;
@@ -235,7 +249,7 @@ html, body {
     min-width: 300px;
     width: 30%;
   }
-  /* line 204, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 213, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .Inputline .searchInput {
     background-color: transparent;
     border: none;
@@ -249,38 +263,38 @@ html, body {
     width: calc(30% -34px);
   }
 
-  /* line 217, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 226, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .fa-search {
     color: #aaa;
   }
 }
 @media screen and (max-width: 1000px) {
-  /* line 226, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 235, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame {
     width: 100%;
   }
-  /* line 228, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 237, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame .main_inner {
     width: 100%;
   }
-  /* line 230, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 239, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame .main_inner .main_container {
     width: 100%;
     background: white;
   }
-  /* line 234, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 243, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame .main_inner .main_container_n {
     width: 100%;
     background: white;
   }
-  /* line 238, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 247, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .main_flame .main_inner .main_container_a {
     width: 100%;
     height: calc(100vh - 70px);
     background: white;
   }
 
-  /* line 245, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 254, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav {
     display: flex;
     justify-content: space-between;
@@ -292,11 +306,11 @@ html, body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  /* line 256, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 265, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav::-webkit-scrollbar {
     display: none;
   }
-  /* line 259, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 268, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav ul {
     display: flex;
     margin: 0;
@@ -304,7 +318,7 @@ html, body {
     width: 80%;
     text-align: center;
   }
-  /* line 266, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 275, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li {
     display: flex;
     justify-content: center;
@@ -312,7 +326,7 @@ html, body {
     padding: 10px 2px;
     min-width: 70px;
   }
-  /* line 273, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 282, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav a {
     display: block;
     width: 100%;
@@ -322,36 +336,36 @@ html, body {
     padding: 0;
     font-size: 0.8em;
   }
-  /* line 282, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 291, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li.current {
     border-bottom: 3px solid #00aced;
   }
-  /* line 285, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 294, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li.des {
     border-bottom: 3px solid #ffffff;
   }
-  /* line 288, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 297, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li:hover {
     color: #E7DA66;
     border-bottom: 3px solid #00aced;
   }
-  /* line 292, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 301, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .tnav nav li a {
     cursor: pointer;
   }
 
-  /* line 297, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 306, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList {
     display: flex;
     padding: 5px 0px 10px 0px;
     border-bottom: 1px solid #f0f0f0;
     text-decoration: none;
   }
-  /* line 301, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 310, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-img {
     width: 35vw;
   }
-  /* line 303, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 312, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-img img {
     display: block;
     width: 100%;
@@ -361,38 +375,38 @@ html, body {
     border: 1px solid #f0f0f0;
     margin-top: 5px;
   }
-  /* line 313, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 322, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-cont {
     width: calc(65vw - 30px);
   }
-  /* line 315, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 324, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-cont p.fouw {
     font-size: 0.8em;
     color: #aaa;
   }
-  /* line 319, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 328, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList .p-cont .title {
     font-weight: bold;
     font-size: 1em;
   }
-  /* line 325, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 334, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .artList:hover .title {
     text-decoration: underline;
   }
 
-  /* line 329, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 338, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .sub_flame, .scoreContainer, .sidebar, .help_flame {
     display: none;
   }
 
-  /* line 333, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 342, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .Inputline {
     border: 1px solid #f0f0f0;
     border-radius: 5px;
     padding: 0 7px;
     margin: 0 10px 0 0;
   }
-  /* line 338, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 347, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .Inputline .searchInput {
     background-color: transparent;
     border: none;
@@ -405,14 +419,14 @@ html, body {
     font-size: 0.8em;
   }
 
-  /* line 350, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 359, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .iiHrap {
     padding: 20px 0px 20px 0;
     width: 100%;
     border-bottom: 1px solid #f0f0f0;
     margin-bottom: 10px;
   }
-  /* line 355, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 364, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .iiHrap .InputlineHome {
     border: 1px solid #f0f0f0;
     border-radius: 5px;
@@ -420,7 +434,7 @@ html, body {
     margin: 0 10px;
     width: calc(100% - 34px);
   }
-  /* line 361, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 370, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .iiHrap .InputlineHome .searchInput {
     background-color: transparent;
     border: none;
@@ -434,27 +448,8 @@ html, body {
     width: calc(100% - 34px);
   }
 
-  /* line 375, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
+  /* line 384, /Users/higuchitakumi/smapr/app/assets/stylesheets/branchFramework.scss */
   .fa-search {
     color: #aaa;
   }
-}
-/* line 2, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_index_result.scss */
-.index_table {
-  display: flex;
-  width: 100%;
-  border-bottom: 1px solid #f0f0f0;
-  padding: 5px 0;
-}
-/* line 7, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_index_result.scss */
-.index_table .title {
-  width: 65%;
-}
-/* line 10, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_index_result.scss */
-.index_table .name {
-  width: 10%;
-}
-/* line 13, /Users/higuchitakumi/smapr/app/assets/stylesheets/article_index_result.scss */
-.index_table .botton {
-  width: 25%;
 }

@@ -1,0 +1,17 @@
+<div class="ar-top flex-jus-between">
+    <div id="img_field" onClick="$('#file').click()" >
+        <div>
+            <i class="far fa-image"></i>
+            <p>クリックしてサムネイルを追加</p>
+            
+        </div>
+    </div>
+    <div class="ar-data-field">
+        <div class="titleInput flex-jus-between"><%= file.text_field :title, autofocus: true,:placeholder => "タイトルを入力" ,class: "ias" ,onkeyup:"ShowLength(value,'title');" ,id: "ias" %><span id="title"><%= if @ar.title then @ar.title.length else 0 end %></span>/100</div>
+        <div class="description-area">
+            <%= file.text_area :description,:placeholder => "descriptionの入力（googleの検索結果や、トップページの説明文に使用されます）" ,class: "ias",onkeyup:"ShowLength(value,'des');" ,id: "nas" %>
+            <div class="des-count"><span id="des"><%= if @ar.description then @ar.description.length else 0 end %></span>/150</div>
+        </div>
+    </div>
+</div>
+<%= file.file_field :thum, class: "image", style: "display:none;", id: "file"%>

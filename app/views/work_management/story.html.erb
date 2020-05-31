@@ -1,30 +1,22 @@
 <%= render 'tmp/header',{ s: "" } %>
-<main class="tofx">
-    <div class="fxse">
-        <div class="sdwe">
-            
-            <div class="topic">
-                <div class="main_flame">
-                    <div class="tnav">
-                        <nav>
-                            <ul>
-                                <li class="des"><a href="/work">記事</a></li>
-                                <li class="des"><a href="/book" >本</a></li>
-                                <li class="des"><a href="/image" >画像</a></li>
-                                <li class="des"><a href="/video" >動画</a></li>
-                                <li class="current"><a href="/story" >ストーリー</a></li>
-                            </ul>
-                        </nav>
-                        
-                    </div>
-                    <div class="tmai">
-                        <img "alt="coming soon" src="<%= $url_at %>/proofly/cmg.jpeg" />
-                        
-                    </div>
-                </div>
-                <%= render 'tmp/userside' %>
+<main class="main_flame">
+    <div class="main_inner">
+        <div class="main_container_n">
+            <div class="tnav">
+                <nav>
+                    <ul>
+                        <li class="des"><a href="/work">記事</a></li>
+                        <li class="des"><a href="/book" >本</a></li>
+                        <li class="des"><a href="/image" >画像</a></li>
+                        <li class="des"><a href="/video" >動画</a></li>
+                        <li class="current"><a href="/story" >ストーリー</a></li>
+                    </ul>
+                </nav>
+                
             </div>
+            <img "alt="coming soon" src="<%= $url_at %>/proofly/cmg.jpeg" />
         </div>
+        <%= render 'tmp/userside' %>
     </div>
 </main>
 <%= render 'tmp/footer' %>

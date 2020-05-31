@@ -1,0 +1,36 @@
+<div class="tagm">
+    <div class="popup_wrap close"></div>
+    <div class="whir">
+        <h2 class="mos">公開設定</h2>
+        <div class="f-submit-inner">
+            <div class="fc">
+                <h3>タグの設定</h3>
+                <p style="color:#aaa;font-size:0.8em;">記事にタグを追加してみましょう。<br />タグを追加すると、ユーザーにみられる確率が上がります。</p><p style="color:#aaa;font-size:0.8em;">また、タグは3つまで入力できます。</p>
+            </div>
+            <div class="tagsContainer">
+                <div class="tagf flex-jus-center"><span>#</span><input type="text" name="tags[]" value="<%= tags[0] %>" /></div>
+                <div class="tagf flex-jus-center"><span>#</span><input type="text" name="tags[]" value="<%= tags[1] %>" /></div>
+                <div class="tagf flex-jus-center"><span>#</span><input type="text" name="tags[]" value="<%= tags[2] %>" /></div>
+            </div>
+            <div class="saleContainer">
+                <h3>販売設定</h3>
+                <label><input type="radio" name="sale" value="0" checked> 無料</label>
+                <label><input type="radio" name="sale" value="1" disabled> 有料</label>
+                <div class="ifpaid">
+                    <p>現在Prooflyはβバージョンです。この機能は正式リリース以降利用できます。</p>
+                </div>
+            </div>
+            <div class="nextline">以上の設定で</div>
+            <div class="all-submit flex-jus-center">
+                <%= file.submit "下書きに保存", class: "de" %><%= file.submit "記事を公開", class: "cor" %>
+                <%#####################################################################################################
+                  #!!!!!!!!!comitで条件分岐して下書きと公開を区別しているのでsubmitのvalueの変更は注意!!!!!!!!!!!!!!!!!!
+                  #####################################################################################################
+                %>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" name="article[category_ids][]" value="">
+<input id="nuyu" type="hidden" maxlength="6" name="paiddatas[]" oninput="value = value.replace(/[^0-9]+/i,'');" />
+<input id="idop" type="hidden" maxlength="3" value="0" name="paiddatas[]" oninput="value = value.replace(/[^0-9]+/i,'');" />

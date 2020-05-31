@@ -1,0 +1,386 @@
+
+<%= stylesheet_link_tag "header", :media => "all" %>
+<%= form_for(@ar,:url => {:action => :update}) do |f| %>
+<header class="main_header">
+    <div class="topwer">
+        <%= link_to "/", class: "top_icon" do -%>
+            <img "alt="techlife.branchwith" src="<%= $url_at %>/techlife/main/icon.png" />
+        <% end -%>
+        <div>
+            <%= f.submit "下書きに保存" %>
+            <%= f.submit "記事を公開" %>
+            <%#####################################################################################################
+              #!!!!!!!!!comitで条件分岐して下書きと公開を区別しているのでsubmitのvalueの変更は注意!!!!!!!!!!!!!!!!!!
+              #####################################################################################################
+            %>
+        </div>
+    </div>
+</header>
+
+<main class="tofx">
+    <div class="fxse">
+        <div class="sdwe">
+            
+                <div class="tcop">
+                    <div class="left">
+                        <div id="img_field" onClick="$('#file').click()" >
+                                <% if @ar.thum? then %>
+                                    <%= image_tag @ar.thum.to_s, class: '' %>
+                                <% else %>
+                                    <i class="far fa-image"></i>
+                                    <p>クリックしてサムネイルを追加</p>
+                                    <span class="ripple"></span>
+                                <% end %>
+                        </div>
+                    </div>
+                    <%= f.file_field :thum, class: "image", style: "display:none;", id: "file"%>
+                    <div class="right">
+                        <%= f.text_field :title, autofocus: true,:placeholder => "タイトル" ,class: "ias"%>
+                        <%= params[:title] %>
+                        <%= f.text_area :description,:placeholder => "description（googleの検索結果や、トップページの説明文に使用されます）" ,class: "ias"%>
+                        <div>
+                            <a class="linkBox open-cate">カテゴリーを追加</a>
+                            <a class="linkBox open-tag">タグを追加</a>
+                            <a class="linkBox open-sale">販売設定</a>
+                        </div>
+                    </div>
+                </div>
+                <%= f.text_area :content ,id: "froala-editor",value: @ar.content %>
+                
+            
+        </div>
+    </div>
+</main>
+<%
+#
+# ポップアップ
+#
+%>
+
+<div class="catem">
+    <div class="popup_wrap close-cate"></div>
+    <div class="whir">
+        <h2 class="mos">カテゴリーの選択</h2>
+
+        <div class="catesb">
+            <div class="fc">
+                <p style="color:#aaa;font-size:0.8em;">記事の内容に合ったカテゴリーを追加してみましょう。<br />記事の内容に合ったカテゴリーを追加すると、ユーザーにみられる確率が上がります。</p><p style="color:#aaa;font-size:0.8em;">また、カテゴリーは3つまで選択できます。</p>
+            </div>
+            <input type="hidden" name="article[category_ids][]" value="">
+            <% @categorydatas = Category.all %>
+            <% @categorydatas.each do |pass| %>
+                <% if pass.parent_id==nil then %>
+                    <p class="oyacate"><%=pass.name %></p>
+                    
+                    <ul>
+                        <%  c=@categorydatas.where(parent_id:pass.id) %>
+                        <% c.each do |p| %>
+                            <li class="list_item">
+                                <% if @cate[0].to_i == p.id ||@cate[1].to_i == p.id || @cate[2].to_i == p.id then %>
+                                    <label for="article_category_ids_<%= p.id %>"><input class="ca" type="checkbox" value="<%= p.id %>" name="article[category_ids][]" id="article_category_ids_<%= p.id %>" checked><span><%=p.name %></span></label>
+                                <% else %>
+                                    <label for="article_category_ids_<%= p.id %>"><input class="ca" type="checkbox" value="<%= p.id %>" name="article[category_ids][]" id="article_category_ids_<%= p.id %>"><span><%=p.name %></span></label>
+                                <% end %>
+                            </li>
+                        <% end %>
+                    </ul>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="tagm">
+    <div class="popup_wrap close-tag"></div>
+    <div class="whir">
+        <h2 class="mos">タグの選択</h2>
+
+        <div class="catesb">
+            <div class="fc">
+                <p style="color:#aaa;font-size:0.8em;">記事にタグを追加してみましょう。<br />タグを追加すると、ユーザーにみられる確率が上がります。</p><p style="color:#aaa;font-size:0.8em;">また、タグは3つまで入力できます。</p>
+            </div>
+            <div class="tagf"><p>#</p><input type="text" name="tags[]" value="<%= @tags[0] %>"/></div>
+            <div class="tagf"><p>#</p><input type="text" name="tags[]" value="<%= @tags[1] %>"/></div>
+            <div class="tagf"><p>#</p><input type="text" name="tags[]" value="<%= @tags[2] %>"/></div>
+        </div>
+    </div>
+</div>
+
+<div class="salem">
+    <div class="popup_wrap close-sale"></div>
+    <div class="whir" style="width:1000px;">
+        <h2 class="mos">販売設定</h2>
+
+        <div class="saleb">
+            <h3>STEP1 販売形式の選択</h3>
+            <div class="sche">
+                <% if @articleSale.sales_type == 0 then %>
+                    <label><input type="radio" name="sale" value="0" checked> 無料</label>
+                    <label><input type="radio" name="sale" value="1"> 有料</label>
+                <% else %>
+                    <label><input type="radio" name="sale" value="0" > 無料</label>
+                    <label><input type="radio" name="sale" value="1" checked> 有料</label>
+                <% end %>
+            </div>
+            <div class="ifpaid">
+                <h3>STEP2 販売価格の設定</h3>
+                <p class="sche" style="color:#aaa;font-size:0.8em;">記事の販売価格を入力してください。記事の販売価格は100円〜999,999円まで設定できます。</p>
+                <p class="sche"><input id="nuyu" type="text" maxlength="6" value="<%= @articleSale.price %>" name="paiddatas[]" oninput="value = value.replace(/[^0-9]+/i,'');" /> 円</p>
+                <p class="ifo sche" style="color:red;">入力値が正しくありません</p>
+                <div class="n3co">
+                    <h3>STEP3 アフィリエイト報酬の設定</h3>
+                    <p class="sche" style="color:#aaa;font-size:0.8em;">次にアフィリエイト報酬の割合を設定しましょう。アフィリエイト報酬を高めることで売上金は減りますが、他サイトで紹介されやすくなり、記事が売れやすくなります。アフィリエイト報酬は紹介者経由で購入された場合のみ紹介者に支払われます。<br />アフィリエイト報酬は0%〜100%まで設定できます。</p>
+                    <p class="sche"><input id="idop" type="text" maxlength="3" value="<%= @articleSale.afe %>" name="paiddatas[]" oninput="value = value.replace(/[^0-9]+/i,'');" /> %</p>
+                    <p class="ifop sche" style="color:red;">入力値が正しくありません</p>
+                    <div class="n4co">
+                        <p class="sche" style="color:#aaa;font-size:0.8em;">紹介者経由で購入された場合、紹介者に支払われるアフィリエイト報酬は<span class="afec"></span>円、売り上げは<span class="payc"></span>円になります。</p>
+                        <h3>STEP4 有料部分の確認</h3>
+                        <p class="sche" style="color:#aaa;font-size:0.8em;">有料部分は以下のように設定されています。正しく設定されているかご確認ください。</p>
+                        <div class="def">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ec">
+                <p style="color:red;">有料部分がありません。以下の画像の矢印の先の「＋」ボタンを押して追加してください。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% end %>
+
+
+
+
+<script>
+//
+//
+//  カテゴリー
+//
+//
+$(function(){
+    $('.catem').css('display','none');
+    $('.open-cate').on('click',function(){
+        $('.catem').fadeIn();
+        
+        return false;
+    });
+    $('.close-cate').on('click',function(){
+        $('.catem').fadeOut();
+        
+        return false;
+    });
+});
+
+$(function () {
+  $('.ca').click(function() {
+    var checked_length = $('.ca:checked').length;
+
+    // 選択上限は3つまで
+    if (checked_length >= 3) {
+      $('.ca:not(:checked)').prop('disabled', true);
+    } else {
+      $('.ca:not(:checked)').prop('disabled', false);
+    }
+  });
+});
+//
+//
+//  タグ
+//
+//
+$(function(){
+    $('.tagm').css('display','none');
+    $('.open-tag').on('click',function(){
+        $('.tagm').fadeIn();
+        
+        return false;
+    });
+    $('.close-tag').on('click',function(){
+        $('.tagm').fadeOut();
+        
+        return false;
+    });
+});
+//
+//
+//  sale
+//
+//
+$(function(){
+    //入力時有料部分保存
+    $('.salem').css('display','none');
+    $('.open-sale').on('click',function(){
+        $('.salem').fadeIn();
+        if($('input[name="sale"]:checked').val() == 1){
+            if($('.fr-element div.paid').length && $('.fr-element div.paid-end').length){
+                $('.ifpaid').fadeIn();
+                
+                var paid = $('.fr-element').html().match(/<div class="paid">ここから有料部分<\/div>(.*?)<div class="paid-end">ここまで有料部分<\/div>/)[0].replace(/<div class="paid">ここから有料部分<\/div>/g, '').replace(/<div class="paid-end">ここまで有料部分<\/div>/g, '');
+                $('.def').html(paid);
+            }
+        }
+        return false;
+    });
+    $('.close-sale').on('click',function(){
+        $('.salem').fadeOut();
+        $('.ec').fadeOut();
+        return false;
+    });
+    
+    //ラジオボタン
+    $( 'input[name="sale"]:radio' ).change( function() {
+        if($(this).val() == 0){
+            $('.ifpaid').fadeOut();
+            $('.ec').fadeOut();
+        }else if($(this).val() == 1){
+            if($('.fr-element div.paid').length && $('.fr-element div.paid-end').length){
+                $('.ifpaid').fadeIn();
+            }else{
+                $('.ec').fadeIn();
+            }
+        }
+    });
+    //金額入力部分
+    $('#nuyu').keyup(function() {
+        if (parseInt($('#nuyu').val()) < 100 || parseInt($('#nuyu').val()) >999999){
+            $('.ifo').fadeIn();
+            $('.n3co').fadeOut();
+        }else{
+            $('.ifo').fadeOut();
+            $('.n3co').fadeIn();
+            var afec = Math.floor(parseInt($('#nuyu').val()) * 0.9 * parseInt($('#idop').val()) * 0.01);
+            var payc = Math.floor(parseInt($('#nuyu').val()) * 0.9 - afec);
+            $('.afec').text(afec.toString());
+            $('.payc').text(payc.toString());
+        }
+    });
+    //アフィリ入力部分
+    $('#idop').keyup(function() {
+        if (parseInt($('#idop').val()) < 0 || parseInt($('#idop').val()) >100){
+            $('.ifop').fadeIn();
+            $('.n4co').fadeOut();
+        }else{
+            $('.ifop').fadeOut();
+            $('.n4co').fadeIn();
+            var afec = Math.floor(parseInt($('#nuyu').val()) * 0.9 * parseInt($('#idop').val()) * 0.01);
+            var payc = Math.floor(parseInt($('#nuyu').val()) * 0.9 - afec);
+            $('.afec').text(afec.toString());
+            $('.payc').text(payc.toString());
+            
+            var paid = $('.fr-element').html().match(/<div class="paid">ここから有料部分<\/div>(.*?)<div class="paid-end">ここまで有料部分<\/div>/)[0].replace(/<div class="paid">ここから有料部分<\/div>/g, '').replace(/<div class="paid-end">ここまで有料部分<\/div>/g, '');
+            $('.def').html(paid);
+            
+        }
+    });
+    
+});
+</script>
+
+
+
+<script>
+
+    FroalaEditor.DefineIcon('addPaid', {NAME: 'addPaid', SVG_KEY: 'add'});
+    FroalaEditor.RegisterCommand('addPaid', {
+      title: '有料部分の追加',
+      focus: false,
+      undo: true,
+      refreshAfterCallback: true,
+      callback: function () {
+        this.html.insert('<div class="paid">ここから有料部分</div>');
+        this.html.insert('<p>ここに有料部分のテキストや画像を追加（有料部分は1記事に1つまでしか反映されません）</p>');
+        this.html.insert('<div class="paid-end">ここまで有料部分</div>');
+        this.html.insert('<p>');
+        this.events.focus();
+        
+      }
+    });
+    
+    
+
+    // Define custom buttons.
+    FroalaEditor.DefineIcon('h2', {NAME: '<strong>H2</strong>', template: 'text'});
+    FroalaEditor.DefineIcon('h3', {NAME: '<strong>H3</strong>', template: 'text'});
+    FroalaEditor.RegisterCommand('h2', {
+      title: 'Heading 1',
+      callback: function () {
+        this.html.insert('<h2>　</h2>');
+    }
+    });
+
+    FroalaEditor.RegisterCommand('h3', {
+      title: 'Heading 2',
+      callback: function () {
+        this.html.insert('<h3>　</h3>');
+      }
+    });
+    
+    
+    
+    
+    
+  new FroalaEditor('#froala-editor', {
+     // Set custom buttons.
+     toolbarButtons: {
+     // Key represents the more button from the toolbar.
+     moreText: {
+       // List of buttons used in the  group.
+       buttons: ['bold', 'italic', 'underline','h2','h3', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting' ],
+
+       // Alignment of the group in the toolbar.
+       align: 'left',
+
+       // By default, 3 buttons are shown in the main toolbar. The rest of them are available when using the more button.
+       buttonsVisible: 5
+     },
+
+
+     moreParagraph: {
+       buttons: ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote'],
+       align: 'left',
+       buttonsVisible: 3
+     },
+
+     moreRich: {
+       buttons: ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertFile', 'insertHR'],
+       align: 'left',
+       buttonsVisible: 3
+     },
+
+     moreMisc: {
+       buttons: ['undo', 'redo', 'addPaid','fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
+       align: 'right',
+       buttonsVisible: 3
+     }
+     
+   },language: 'ja'
+   })
+   //画像
+   $(function(){
+     $fileField = $('#file')
+    
+     // 選択された画像を取得し表示
+     $($fileField).on('change', $fileField, function(e) {
+       file = e.target.files[0]
+       reader = new FileReader(),
+       $preview = $("#img_field");
+    
+       reader.onload = (function(file) {
+         return function(e) {
+           $preview.empty();
+           $preview.append($('<img>').attr({
+             src: e.target.result,
+             width: "100%",
+             class: "preview",
+             title: file.name
+           }));
+         };
+       })(file);
+       reader.readAsDataURL(file);
+     });
+   });
+   
+</script>
