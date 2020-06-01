@@ -54,22 +54,23 @@ class ArticleController < ApplicationController
         
         
         #music.branchwithから楽曲データを取得
-        uri = URI.parse("https://mbw6.herokuapp.com")
-        https = Net::HTTP.new(uri.host, uri.port)
-        https.open_timeout = 10
-        https.read_timeout = 10
-        https.use_ssl = true
-        https.verify_mode = OpenSSL::SSL::VERIFY_PEER
-        https.verify_depth = 5
+        if @recommend.length > 0
+            uri = URI.parse("https://mbw6.herokuapp.com")
+            https = Net::HTTP.new(uri.host, uri.port)
+            https.open_timeout = 10
+            https.read_timeout = 10
+            https.use_ssl = true
+            https.verify_mode = OpenSSL::SSL::VERIFY_PEER
+            https.verify_depth = 5
 
-        begin
-          response = nil
-          https.start do
-            response = https.get("/api/v1/get_musicData?artist=#{@recommend[0][0]}&title=#{@recommend[1][0]}&limit=1")
-          end
-          @musicData=JSON.parse(response.body)
+            begin
+              response = nil
+              https.start do
+                response = https.get("/api/v1/get_musicData?artist=#{@recommend[0][0]}&title=#{@recommend[1][0]}&limit=1")
+              end
+              @musicData=JSON.parse(response.body)
+            end
         end
-        
     end
     def new
         # permission: 登録済みユーザー

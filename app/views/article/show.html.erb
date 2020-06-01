@@ -32,22 +32,24 @@
                                 <dt>目次</dt>
                             </dl>
                     </div>
-                    <% if @musicData["musicData"] %>
-                        <div class="musicInf">
-                            <h3>楽曲情報</h3>
-                            <div class="flex-jus-center">
-                                <div class="jucketContainer">
-                                    <%= @musicData["musicData"][0]["jucket"] %>
-                                </div>
-                                <div class="musicdataContainer">
-                                    <div>曲名: <%= @musicData["musicData"][0]["title"] %></div>
-                                    <div>アーティスト: <%= @musicData["musicData"][0]["artist"] %></div>
-                                    <div>作詞: <%= @musicData["musicData"][0]["lyricist"] %></div>
-                                    <div>作曲: <%= @musicData["musicData"][0]["composer"] %></div>
-                                    <a href="https://mbw6.herokuapp.com/lyrics/<%= @musicData["musicData"][0]["key"] %>">歌詞を見る</a>
+                    <% if !@musicData.nil? %>
+                        <% if @musicData["musicData"] %>
+                            <div class="musicInf">
+                                <h3>楽曲情報</h3>
+                                <div class="flex-jus-center">
+                                    <div class="jucketContainer">
+                                        <%= @musicData["musicData"][0]["jucket"] %>
+                                    </div>
+                                    <div class="musicdataContainer">
+                                        <div>曲名: <%= @musicData["musicData"][0]["title"] %></div>
+                                        <div>アーティスト: <%= @musicData["musicData"][0]["artist"] %></div>
+                                        <div>作詞: <%= @musicData["musicData"][0]["lyricist"] %></div>
+                                        <div>作曲: <%= @musicData["musicData"][0]["composer"] %></div>
+                                        <a href="https://mbw6.herokuapp.com/lyrics/<%= @musicData["musicData"][0]["key"] %>">歌詞を見る</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        <% end %>
                     <% end %>
                     <div class="main_cont">
                         
