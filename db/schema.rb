@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200512182850) do
+ActiveRecord::Schema.define(version: 2020_05_12_182850) do
 
   create_table "article_index_results", force: :cascade do |t|
     t.integer "article_id", limit: 8
