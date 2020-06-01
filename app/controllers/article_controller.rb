@@ -54,7 +54,7 @@ class ArticleController < ApplicationController
         
         
         #music.branchwithから楽曲データを取得
-        if @recommend.length > 0
+        if @recommend.length > 1
             uri = URI.parse("https://mbw6.herokuapp.com")
             https = Net::HTTP.new(uri.host, uri.port)
             https.open_timeout = 10

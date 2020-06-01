@@ -5,6 +5,13 @@
     <title><%= full_title(yield(:title)) %></title>
     <meta name="description" content="<%= full_description(yield(:description)) %>">
     
+    <%# SNSmetaタグ %>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@music_bWith" />
+    <meta property="og:url" content="<%= request.url %>" />
+    <meta property="og:title" content="<%= full_title(yield(:title)) %>" />
+    <meta property="og:description" content="<%= full_description(yield(:description)) %>" />
+    
     <%# index %>
     <% if yield(:index)=="noindex" then%>
         <meta name="robots" content="noindex">
