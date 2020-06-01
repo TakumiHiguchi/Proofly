@@ -29,8 +29,18 @@
         $(function(){
             $('.tagm').css('display','none');
             $('.f-submit').on('click',function(){
-                $('.tagm').fadeIn();
-                
+                length[0] = parseInt($('#ias').val().length);
+                length[1] = parseInt($('#nas').val().length);
+                length[2] = parseInt($('.fr-element').text().length);
+                if (length[2] <= 0){
+                    alert("本文を入力してください");
+                }else if(length[0] <= 0 || length[0] > 100){
+                    alert("タイトルは1文字以上100文字以下でなくてはなりません。");
+                }else if (length[1] <= 0 || length[1] > 150){
+                    alert("descriptionは1文字以上150文字以下でなくてはなりません。");
+                }else{
+                    $('.tagm').fadeIn();
+                }
                 return false;
             });
             $('.close').on('click',function(){

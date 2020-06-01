@@ -12,9 +12,9 @@ Rails.application.routes.draw do
 
   get 'management' => "management#index"
   get 'ArticleIndexResult' => "article_index_result#index"
-resources :nuser
-resources :category
-resources :tag, only: [:index, :show]
+    resources :nuser
+    resources :category
+    resources :tag, only: [:index, :show]
 
   devise_for :users,
   :controllers => {

@@ -29,6 +29,9 @@ class ArticleController < ApplicationController
         # index-type: index
         # author: Takumi
         ##################################################################
+        
+        require 'openssl'
+        require 'net/https'
 
         @userDetail = UserDetail.find_by(user_key:params[:id]) #記事のユーザーデータ
         @articleData = Article.find_by(key: params[:key], user_detail_id: @userDetail.id) #記事データ
@@ -48,6 +51,24 @@ class ArticleController < ApplicationController
         articleTags = UserDetail.joins(articles: :tags).select("user_details.*,articles.*,tags.*").where('articles.key = ? ',params[:key])
         articleRecommend = ArticleRecommend.new()
         @recommend,@firstTagCount = articleRecommend.tagRecommend(articleTags,3)
+        
+        
+        #music.branchwithから楽曲データを取得
+        uri = URI.parse("https://mbw6.herokuapp.com")
+        https = Net::HTTP.new(uri.host, uri.port)
+        https.open_timeout = 10
+        https.read_timeout = 10
+        https.use_ssl = true
+        https.verify_mode = OpenSSL::SSL::VERIFY_PEER
+        https.verify_depth = 5
+
+        begin
+          response = nil
+          https.start do
+            response = https.get("/api/v1/get_musicData?artist=#{@recommend[0][0]}&title=#{@recommend[1][0]}&limit=1")
+          end
+          @musicData=JSON.parse(response.body)
+        end
         
     end
     def new
