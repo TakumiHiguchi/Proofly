@@ -2,7 +2,7 @@
 <aside class="sub_flame" style="padding:12px 0;">
 	<div class="headline">次の記事</div>
 	<% @nextArticles.each do |pas| %>
-	    <a href="/nuser/<%= @userDetail.user_key %>/article/<%= pas.key %>" class="artb1">
+	    <a href="/nuser/<%= pas.user_key %>/article/<%= pas.key %>" class="artb1">
 	        <div class="left">
 	            <% if pas.thum then %>
 	            	<% if Rails.env.production? %>
