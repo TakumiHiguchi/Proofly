@@ -7,6 +7,8 @@ gem 'font-awesome-rails'
 
 gem 'kaminari', ">= 1.2.1" #ページネーション
 
+gem 'rack-cors'
+
 gem "wysiwyg-rails"#froala
 
 # for image uploader with AWS S3
